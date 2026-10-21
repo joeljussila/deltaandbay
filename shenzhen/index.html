@@ -296,15 +296,20 @@ h3,summary{font-weight:400;font-size:calc(.645 * clamp(22px,1.9vw,27px))}
 /* Gallery and section headings share the page gutter and display type. */
 .intro.hero-photo .row{display:block}
 .gallery{padding-left:var(--pad);padding-right:var(--pad)}
-.gal-head{max-width:none;margin:0 0 18px;padding:0;align-items:flex-end;flex-wrap:wrap}
+.gal-head{max-width:1240px;margin:0 0 18px;padding:0;align-items:flex-end;flex-wrap:wrap}
 .gal-head h2{margin:0}
 .gal-btn{width:auto;min-width:44px;padding:0 16px;font:12px 'IBM Plex Mono',monospace}
 .gal-count{text-align:left}
-.gallery-hint{font-size:12px;color:var(--muted);margin:0 0 18px}
-.track{position:relative;padding:0;scroll-padding:0;scrollbar-width:thin;scrollbar-color:var(--muted) var(--bg);padding-bottom:16px}
-.track::-webkit-scrollbar{display:block;height:7px}
-.track::-webkit-scrollbar-thumb{background:var(--muted)}
-.slide{flex:0 0 100%;min-width:0}
+.gallery-hint{position:absolute;width:1px;height:1px;margin:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.gallery-viewport{max-width:1240px;overflow:hidden;touch-action:pan-y pinch-zoom}
+.track{position:relative;width:100%;margin:0;padding:0;overflow:visible;scroll-snap-type:none;transform:translateX(0);transition:transform .5s cubic-bezier(.22,.68,0,1)}
+.track:focus-visible{outline:2px solid var(--text);outline-offset:-2px}
+.gallery-viewport:focus-within{outline:2px solid var(--text);outline-offset:4px}
+.gal-btn:focus-visible{outline:2px solid var(--text);outline-offset:4px}
+.slide{flex:0 0 100%;min-width:0;scroll-snap-align:none}
+.gallery .shot{max-width:none;margin:0}
+.gallery .treat{aspect-ratio:16/9}
+@media(prefers-reduced-motion:reduce){.track{transition:none}}
 .shot figcaption{display:block;color:var(--sub);font-size:13px;line-height:1.6}
 .shot figcaption>span{display:block}
 .shot figcaption>span+span{margin-top:4px;font-size:11px;color:var(--dim)}
@@ -317,11 +322,12 @@ h3,summary{font-weight:400;font-size:calc(.645 * clamp(22px,1.9vw,27px))}
 @media(max-width:560px){.nav div{flex-wrap:wrap;justify-content:flex-end;column-gap:12px;row-gap:0;max-width:calc(100% - 108px)}.nav div a{min-height:32px;height:32px}}
 @media(max-width:700px){.gal-head{align-items:flex-start}.gal-nav{width:100%;justify-content:flex-start}.slide .treat{aspect-ratio:4/3}.gal-btn{padding:0 12px}}
 </style>
+<link rel="stylesheet" href="/site-header.css?v=20261020">
 </head>
 <body>
 <div class="glow" aria-hidden="true"></div>
 <header class="page-top">
-<nav class="nav" aria-label="Main navigation"><a class="logo" href="../" aria-label="Delta &amp; Bay home"><img src="../images/deltaandbay_lockup_ivory.svg" alt="Delta &amp; Bay" width="3456" height="2099"></a><div><a href="../#itinerary">Back to the trip</a><a class="apply-link" href="../apply/">Apply</a></div></nav>
+<nav class="nav" aria-label="Main navigation"><a class="logo" href="../" aria-label="Delta &amp; Bay home"><img src="../images/deltaandbay_lockup_spaced_ivory.svg" alt="Delta &amp; Bay" width="3440" height="2280"></a><div><a href="../#itinerary">Back to the trip</a><a class="apply-link" href="../apply/">Apply</a></div></nav>
 </header>
 
 <section class="intro hero-photo">
@@ -349,10 +355,10 @@ h3,summary{font-weight:400;font-size:calc(.645 * clamp(22px,1.9vw,27px))}
 </div>
 </section>
 
-<section class="band gallery" aria-label="Photos of Shenzhen">
+<section id="photos" class="band gallery" aria-label="Photos of Shenzhen">
 <div class="gal-head"><h2>Shenzhen up close</h2><div class="gal-nav"><span class="gal-count" aria-live="polite">1 / 5</span><button type="button" class="gal-btn prev" aria-label="Previous photo">← Previous</button><button type="button" class="gal-btn next" aria-label="Next photo">Next →</button></div></div>
-<p class="gallery-hint" id="gallery-help">Use the arrows or swipe to browse the photos.</p>
-<ul class="track" tabindex="0" aria-label="Shenzhen photo gallery" aria-describedby="gallery-help"><li class="slide"><figure class="shot"><div class="treat"><img src="../images/shenzhen/agri-drones.jpg" alt="Agricultural drones in a DJI store, Shenzhen"></div><figcaption><span>Agricultural drones in a DJI store, Shenzhen</span><span><a href="https://commons.wikimedia.org/wiki/File:DJI_Agriculture_Drones_in_DJI_Store_20250501.jpg" target="_blank" rel="noopener">Steven Sun, CC BY-SA 4.0</a></span></figcaption></figure></li><li class="slide"><figure class="shot"><div class="treat"><img src="../images/shenzhen/robot-shop.jpg" alt="A robot-run shop by Galbot, Bao'an"></div><figcaption><span>A robot-run shop by Galbot, Bao'an</span><span><a href="https://commons.wikimedia.org/wiki/File:SZ_%E6%B7%B1%E5%9C%B3_Shenzhen_%E5%AF%B6%E5%AE%89_BaoAn_%E6%99%AF%E5%BE%9E%E8%B7%AF_Jingcong_Road_n_%E5%92%8C%E5%8C%AF%E8%B7%AF_HeHui_Road_shop_%E9%8A%80%E6%B2%B3%E5%A4%AA%E7%A9%BA%E8%89%99_Galbot_Store_beverage_booth_HooLoo_Coffee_October_2025_R12S_07.jpg" target="_blank" rel="noopener">Wikimedia Commons, CC0</a></span></figcaption></figure></li><li class="slide"><figure class="shot"><div class="treat"><img src="../images/shenzhen/drone-counter.jpg" loading="lazy" alt="A drone counter at Huaqiang Electronic World"></div><figcaption><span>A drone counter at Huaqiang Electronic World</span><span><a href="https://commons.wikimedia.org/wiki/File:Quadcopter_drone_vendor_at_Shenzhen_Huaqiang_Electronic_World.jpg" target="_blank" rel="noopener">Benlisquare, CC BY-SA 4.0, faces blurred</a></span></figcaption></figure></li><li class="slide"><figure class="shot"><div class="treat"><img src="../images/shenzhen/factory-floor.jpg" loading="lazy" alt="An electronics factory in Shenzhen"></div><figcaption><span>An electronics factory in Shenzhen</span><span><a href="https://commons.wikimedia.org/wiki/File:Electronics_factory_in_Shenzhen.jpg" target="_blank" rel="noopener">Steve Jurvetson, CC BY 2.0</a></span></figcaption></figure></li><li class="slide"><figure class="shot"><div class="treat"><img src="../images/shenzhen/pcb-line.jpg" loading="lazy" alt="A circuit-board production line, Shenzhen"></div><figcaption><span>A circuit-board production line, Shenzhen</span><span><a href="https://www.flickr.com/photos/67734410@N00/38194655811" target="_blank" rel="noopener">Mitch Altman (maltman23), CC BY-SA 2.0</a></span></figcaption></figure></li></ul>
+<p class="gallery-hint" id="gallery-help">Next and Previous move between photos. Swipe on mobile.</p>
+<div class="gallery-viewport"><ul class="track" tabindex="0" aria-label="Shenzhen photo gallery" aria-describedby="gallery-help"><li class="slide"><figure class="shot"><div class="treat"><img src="../images/shenzhen/agri-drones.jpg" alt="Agricultural drones in a DJI store, Shenzhen"></div><figcaption><span>Agricultural drones in a DJI store, Shenzhen</span><span><a href="https://commons.wikimedia.org/wiki/File:DJI_Agriculture_Drones_in_DJI_Store_20250501.jpg" target="_blank" rel="noopener">Steven Sun, CC BY-SA 4.0</a></span></figcaption></figure></li><li class="slide"><figure class="shot"><div class="treat"><img src="../images/shenzhen/robot-shop.jpg" alt="A robot-run shop by Galbot, Bao'an"></div><figcaption><span>A robot-run shop by Galbot, Bao'an</span><span><a href="https://commons.wikimedia.org/wiki/File:SZ_%E6%B7%B1%E5%9C%B3_Shenzhen_%E5%AF%B6%E5%AE%89_BaoAn_%E6%99%AF%E5%BE%9E%E8%B7%AF_Jingcong_Road_n_%E5%92%8C%E5%8C%AF%E8%B7%AF_HeHui_Road_shop_%E9%8A%80%E6%B2%B3%E5%A4%AA%E7%A9%BA%E8%89%99_Galbot_Store_beverage_booth_HooLoo_Coffee_October_2025_R12S_07.jpg" target="_blank" rel="noopener">Wikimedia Commons, CC0</a></span></figcaption></figure></li><li class="slide"><figure class="shot"><div class="treat"><img src="../images/shenzhen/drone-counter.jpg" loading="lazy" alt="A drone counter at Huaqiang Electronic World"></div><figcaption><span>A drone counter at Huaqiang Electronic World</span><span><a href="https://commons.wikimedia.org/wiki/File:Quadcopter_drone_vendor_at_Shenzhen_Huaqiang_Electronic_World.jpg" target="_blank" rel="noopener">Benlisquare, CC BY-SA 4.0, faces blurred</a></span></figcaption></figure></li><li class="slide"><figure class="shot"><div class="treat"><img src="../images/shenzhen/factory-floor.jpg" loading="lazy" alt="An electronics factory in Shenzhen"></div><figcaption><span>An electronics factory in Shenzhen</span><span><a href="https://commons.wikimedia.org/wiki/File:Electronics_factory_in_Shenzhen.jpg" target="_blank" rel="noopener">Steve Jurvetson, CC BY 2.0</a></span></figcaption></figure></li><li class="slide"><figure class="shot"><div class="treat"><img src="../images/shenzhen/pcb-line.jpg" loading="lazy" alt="A circuit-board production line, Shenzhen"></div><figcaption><span>A circuit-board production line, Shenzhen</span><span><a href="https://www.flickr.com/photos/67734410@N00/38194655811" target="_blank" rel="noopener">Mitch Altman (maltman23), CC BY-SA 2.0</a></span></figcaption></figure></li></ul></div>
 </section>
 <section id="numbers">
 <div class="wide"><h2>In numbers</h2><dl class="stats"><div><dt><a href="https://ifr.org/ifr-press-releases/news/global-robot-demand-in-factories-doubles-over-10-years" target="_blank" rel="noopener">IFR World Robotics 2025</a></dt><dd>54%</dd><p>of the world's new industrial robots were installed in China in 2024</p></div><div><dt><a href="https://restofworld.org/2026/china-robot-ban-silicon-valley/" target="_blank" rel="noopener">Omdia, via Rest of World</a></dt><dd>~90%</dd><p>of humanoids sold worldwide in 2025 were Chinese</p></div><div><dt><a href="https://fgw.sz.gov.cn/ztzl/qtztzl/szscjmyjjfzzhfwpt/xwzl/cyfz/content/post_12750929.html" target="_blank" rel="noopener">Shenzhen Development and Reform Commission</a></dt><dd>RMB 243B</dd><p>Shenzhen robotics output in 2025, up 20.6% on 2024</p></div><div><dt><a href="https://www.szns.gov.cn/english/news/latestnews/content/post_12878323.html" target="_blank" rel="noopener">Nanshan District</a></dt><dd>200+</dd><p>robotics supply-chain companies in Nanshan's Robot Valley</p></div></dl></div>
@@ -405,14 +411,22 @@ h3,summary{font-weight:400;font-size:calc(.645 * clamp(22px,1.9vw,27px))}
 <script>
 (function(){
   var g=document.querySelector('.gallery'); if(!g) return;
-  var t=g.querySelector('.track'), sl=[].slice.call(t.children), c=g.querySelector('.gal-count'), pv=g.querySelector('.prev'), nx=g.querySelector('.next');
-  var smooth=!window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function idx(){var x=t.getBoundingClientRect().left+parseFloat(getComputedStyle(t).paddingLeft), best=0, d=1e9; sl.forEach(function(s,i){var e=Math.abs(s.getBoundingClientRect().left-x); if(e<d){d=e;best=i}}); return best}
-  function upd(){var i=idx(); c.textContent=(i+1)+' / '+sl.length; pv.disabled=i===0; nx.disabled=t.scrollLeft+t.clientWidth>=t.scrollWidth-4}
-  function go(d){var next=Math.max(0,Math.min(sl.length-1,idx()+d)); t.scrollTo({left:sl[next].offsetLeft-sl[0].offsetLeft,behavior:smooth?'smooth':'auto'})}
+  var t=g.querySelector('.track'), sl=[].slice.call(t.children), c=g.querySelector('.gal-count'), pv=g.querySelector('.prev'), nx=g.querySelector('.next'), viewport=g.querySelector('.gallery-viewport'), current=0;
+  function show(next){
+    current=Math.max(0,Math.min(sl.length-1,next));
+    t.style.transform='translateX(calc('+(-current*100)+'% - '+(current*16)+'px))';
+    c.textContent=(current+1)+' / '+sl.length;
+    pv.disabled=current===0; nx.disabled=current===sl.length-1;
+    sl.forEach(function(s,i){s.inert=i!==current;s.setAttribute('aria-hidden',i===current?'false':'true');});
+  }
+  function go(d){show(current+d)}
   pv.addEventListener('click',function(){go(-1)}); nx.addEventListener('click',function(){go(1)});
-  t.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){e.preventDefault();go(1)}if(e.key==='ArrowLeft'){e.preventDefault();go(-1)}});
-  var r; t.addEventListener('scroll',function(){clearTimeout(r); r=setTimeout(upd,60)}); window.addEventListener('resize',upd); upd();
+  t.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){e.preventDefault();go(1)}if(e.key==='ArrowLeft'){e.preventDefault();go(-1)}if(e.key==='Home'){e.preventDefault();show(0)}if(e.key==='End'){e.preventDefault();show(sl.length-1)}});
+  var start=null;
+  viewport.addEventListener('touchstart',function(e){start=e.touches.length===1?{x:e.touches[0].clientX,y:e.touches[0].clientY}:null;},{passive:true});
+  viewport.addEventListener('touchend',function(e){if(!start)return;var end=e.changedTouches[0],dx=end.clientX-start.x,dy=end.clientY-start.y;start=null;if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy))go(dx<0?1:-1);},{passive:true});
+  viewport.addEventListener('touchcancel',function(){start=null;},{passive:true});
+  show(0);
 })();
 </script>
 </body></html>

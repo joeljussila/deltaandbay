@@ -1,0 +1,4 @@
+/* The wordmark shares the page gutter; extra space is inside the SVG below the monogram. */
+.nav .logo,header .mark{display:block;width:clamp(102px,8.9vw,138px);height:auto;padding:0;flex:none;line-height:0}
+.nav .logo img,header .mark img{display:block;width:100%;height:auto;max-width:none}
+@media(max-width:900px){.nav .logo,header .mark{width:92px;height:auto;padding:0}}
