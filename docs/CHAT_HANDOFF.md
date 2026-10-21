@@ -2,6 +2,12 @@
 
 Read this before changing the site. This document records decisions and results from the website audit and follow-up chat. It is a practical handoff, not a verbatim transcript. GitHub `main` and the deployed source are the authority for what has shipped. Local edits and open branches may contain work from simultaneous chats.
 
+## 20 October 2026: deposit and pricing (Shawn's decision)
+
+- Price section shows only **Founding $8,900** and **Early bird $9,900**; Regular and Final call are removed for now. Note under the table: "A $500 deposit holds your place and your price."
+- "When do I pay?": $500 deposit invoiced, due within 7 days; balance by 30 November; deposit non-refundable if the traveller cancels but the place is transferable; trip runs only if 15 have paid in full by 30 November, otherwise full refund including deposit. Replaces the 30%/72-hour and minimum-10 wording. Matches booking contract v1.3 in the planning folder.
+- Shenzhen page "Join us" says "paid in full by 30 November" to match.
+
 ## 20 October 2026 update (supersedes older design notes below)
 
 - Started from current main `9ac7361`, including Shawn's PRs #9–#11. Current homepage title is **Bridging Frontiers**, in Michroma, with the existing lockup and colours preserved.
