@@ -2,7 +2,18 @@
 
 Read this before changing the site. This document records decisions and results from the website audit and follow-up chat. It is a practical handoff, not a verbatim transcript. GitHub `main` and the deployed source are the authority for what has shipped. Local edits and open branches may contain work from simultaneous chats.
 
-## Production baseline
+## 20 October 2026 update (supersedes older design notes below)
+
+- Started from current main `9ac7361`, including Shawn's PRs #9–#11. Current homepage title is **Bridging Frontiers**, in Michroma, with the existing lockup and colours preserved.
+- User's screenshots 1 and 8 refer to the homepage itinerary logos and the `/shenzhen/` company wall. All 8 + 27 marks now link to their company websites with accessible names and keyboard focus styles.
+- Screenshots 2–3: hero subtitle is **San Francisco to Shenzhen**, with more space below the title. Removed the extra Why Shenzhen link below the application button and the redundant ~20 places display. The header navigation still links to the Shenzhen page.
+- Screenshots 4–5: removed the Shenzhen hero's date badge and moved its skyline attribution to footer Photo credits. Attribution remains available; do not silently discard licensed photo credits.
+- Screenshots 6–7: **Shenzhen up close** and **In numbers** use ivory Michroma at the same size as Itinerary. No decorative blue dots remain on published pages. Text and gallery share the left gutter; each gallery photo has its own caption below it.
+- Gallery now presents one complete photo at a time, with labelled Previous/Next buttons, a count, visible scrollbar and swipe/keyboard navigation. Scroll target uses slide positions rather than an estimated step.
+- Reviewed homepage, Shenzhen, application and Privacy on desktop and narrow mobile layouts. Header wraps on small phones so Apply stays visible. Existing form/video tests: 19 pass. No database or application submission behavior changed.
+- These updates leave the inherited commercial text and photography intact. Internal notes, tests and archived design pages remain excluded from deployment by `.vercelignore`.
+
+## Historical production baseline
 
 - Repository: https://github.com/joeljussila/deltaandbay
 - Production: https://deltaandbay.com, Vercel project `deltaandbay`, automatically deployed from `main`.

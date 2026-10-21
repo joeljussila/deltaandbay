@@ -17,7 +17,6 @@ a{color:inherit;text-decoration:none}a:hover{opacity:.7}
 .name{margin:0;font-family:'Instrument Serif',serif;font-weight:400;letter-spacing:-.01em;line-height:.9;font-size:calc(0.98 * clamp(52px,min(9.7vw,15.5vh),210px));white-space:nowrap}
 .tag{font-family:'Instrument Serif',serif;font-style:normal;color:var(--sub);font-size:calc(1.9 * clamp(13px,min(1.48vw,2.4vh),26px))}
 .date{display:flex;align-items:center;gap:12px;font-size:clamp(11px,.94vw,15px);letter-spacing:.14em;text-transform:lowercase;color:var(--muted)}
-.dot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex:none}
 .cta{display:inline-block;margin-top:10px;border:1px solid var(--text);padding:15px 26px;font-size:clamp(11px,.86vw,13px);letter-spacing:.14em;text-transform:lowercase}
 .cta.solid{background:var(--text);color:var(--bg);border-color:var(--text)}
 .grain{position:fixed;inset:0;width:100%;height:100%;opacity:.025;mix-blend-mode:normal;pointer-events:none;z-index:10}
@@ -61,7 +60,7 @@ strong{font-weight:500;color:var(--text)}
 .tiers td{padding:18px 0;border-bottom:1px solid var(--line);font-size:14.5px;color:var(--sub);vertical-align:baseline}
 .tiers tr:first-child td{border-top:1px solid var(--line)}
 .tiers td:first-child{color:var(--dim);font-size:12px;letter-spacing:.1em;width:34%}
-.tiers td:last-child{text-align:right;font-family:'Instrument Serif',serif;font-size:28px;color:var(--text)}
+.tiers td:last-child{text-align:left;font-family:'Instrument Serif',serif;font-size:28px;color:var(--text)}
 
 /* FAQ */
 details{border-top:1px solid var(--line)}
@@ -89,7 +88,7 @@ footer .mark{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:
   .name{font-size:min(18.5vw,10vh)}
   .tag{font-size:clamp(22px,6.4vw,30px);line-height:1.2}
   .date{font-size:11px}
-  .hero .cta{align-self:stretch;text-align:center}
+  .hero .cta{align-self:stretch;text-align:left}
 }
 @media (max-width:560px){
   .nav .opt{display:none}
@@ -97,7 +96,7 @@ footer .mark{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:
   .days time{padding-top:0}
   .steps li{grid-template-columns:36px 1fr}
   .tiers td:first-child{width:auto}
-  .cta{display:block;text-align:center}
+  .cta{display:block;text-align:left}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important}html{scroll-behavior:auto}}
 
@@ -156,7 +155,7 @@ footer .mark{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:
 .nav .logo,.nav .logo img{height:clamp(62px,5.4vw,84px);width:auto}
 @media(max-width:900px){.nav .logo{width:auto;height:58px;padding-top:2px}.nav .logo img{height:56px}}
 .rolling{margin:0;font-size:clamp(10px,.8vw,12px);letter-spacing:.1em;color:var(--muted)}
-@media (max-aspect-ratio:1/1){.hero .name{white-space:normal;line-height:.95}.hero .rolling{align-self:stretch;text-align:center}}
+@media (max-aspect-ratio:1/1){.hero .name{white-space:normal;line-height:.95}.hero .rolling{align-self:stretch;text-align:left}}
 footer .mark{font-family:'Montserrat',sans-serif;font-size:13px;letter-spacing:.32em;text-transform:uppercase}
 
 /* Edge glow below the hero (brand kit: deep blue right edge, lighter blue bottom-left). Fades in after the hero and drifts with scroll. */
@@ -195,6 +194,14 @@ h3,summary{font-weight:400;font-size:calc(.645 * clamp(22px,1.9vw,27px))}
 .cta.deep{margin-top:0}
 @media (max-width:900px){.hosts.side .host-logos{grid-template-columns:repeat(4,minmax(0,1fr));max-width:none;--k:44px}}
 @media (max-width:560px){.hosts.side .host-logos{grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;--k:38px}}
+
+/* Shared content alignment and accessible company links. */
+.row{max-width:none;margin:0}
+.nav{left:var(--pad)}
+.host-logos a{min-height:44px}
+.host-logos a:focus-visible{outline:2px solid var(--text);outline-offset:5px}
+.hosts-label,.tier-label{text-transform:none}
+.tiers td:last-child{text-align:left}
 </style>
 <style>
 .page-top{position:relative;z-index:2;padding:max(44px,env(safe-area-inset-top)) var(--pad) 0}
@@ -252,7 +259,7 @@ h3,summary{font-weight:400;font-size:calc(.645 * clamp(22px,1.9vw,27px))}
 .gal-head{display:flex;justify-content:space-between;align-items:center;gap:16px;max-width:1240px;margin:0 auto 16px;padding:0 var(--pad)}
 .gal-head .label{margin:0}
 .gal-nav{display:flex;align-items:center;gap:10px}
-.gal-count{font-size:12px;letter-spacing:.1em;color:var(--dim);font-variant-numeric:tabular-nums;min-width:48px;text-align:right}
+.gal-count{font-size:12px;letter-spacing:.1em;color:var(--dim);font-variant-numeric:tabular-nums;min-width:48px;text-align:left}
 .gal-btn{width:44px;height:44px;border:1px solid var(--line);background:transparent;color:var(--text);font-size:16px;cursor:pointer;border-radius:0}
 .gal-btn:hover{border-color:var(--text)}
 .gal-btn:disabled{opacity:.3;cursor:default}
@@ -285,6 +292,31 @@ h3,summary{font-weight:400;font-size:calc(.645 * clamp(22px,1.9vw,27px))}
 @media (max-width:900px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:700px){.quotes{grid-template-columns:1fr}}
 </style>
+<style>
+/* Gallery and section headings share the page gutter and display type. */
+.intro.hero-photo .row{display:block}
+.gallery{padding-left:var(--pad);padding-right:var(--pad)}
+.gal-head{max-width:none;margin:0 0 18px;padding:0;align-items:flex-end;flex-wrap:wrap}
+.gal-head h2{margin:0}
+.gal-btn{width:auto;min-width:44px;padding:0 16px;font:12px 'IBM Plex Mono',monospace}
+.gal-count{text-align:left}
+.gallery-hint{font-size:12px;color:var(--muted);margin:0 0 18px}
+.track{position:relative;padding:0;scroll-padding:0;scrollbar-width:thin;scrollbar-color:var(--muted) var(--bg);padding-bottom:16px}
+.track::-webkit-scrollbar{display:block;height:7px}
+.track::-webkit-scrollbar-thumb{background:var(--muted)}
+.slide{flex:0 0 100%;min-width:0}
+.shot figcaption{display:block;color:var(--sub);font-size:13px;line-height:1.6}
+.shot figcaption>span{display:block}
+.shot figcaption>span+span{margin-top:4px;font-size:11px;color:var(--dim)}
+.wide{max-width:none;margin:0}
+#numbers h2{margin-bottom:28px}
+.photo-credits{border:0;max-width:100%;font-size:11px}
+.photo-credits summary{font:12px 'IBM Plex Mono',monospace;padding:8px 0;gap:12px}
+.photo-credits p{font-size:11px;margin-top:12px}
+.photo-credits a{text-decoration:underline}
+@media(max-width:560px){.nav div{flex-wrap:wrap;justify-content:flex-end;column-gap:12px;row-gap:0;max-width:calc(100% - 108px)}.nav div a{min-height:32px;height:32px}}
+@media(max-width:700px){.gal-head{align-items:flex-start}.gal-nav{width:100%;justify-content:flex-start}.slide .treat{aspect-ratio:4/3}.gal-btn{padding:0 12px}}
+</style>
 </head>
 <body>
 <div class="glow" aria-hidden="true"></div>
@@ -294,9 +326,9 @@ h3,summary{font-weight:400;font-size:calc(.645 * clamp(22px,1.9vw,27px))}
 
 <section class="intro hero-photo">
 <div class="bg"><div class="treat"><img src="../images/shenzhen/skyline-night.jpg" alt="Shenzhen Bay at night"></div></div>
-<p class="credit">Shenzhen Bay at night · <a href="https://commons.wikimedia.org/w/index.php?curid=80858302" target="_blank" rel="noopener">Sparktour, CC BY-SA 4.0</a></p>
+
 <div class="row">
-<div><p class="label"><span class="dot"></span>11–17 January 2027</p></div>
+
 <div>
 <h1>Why Shenzhen</h1>
 <p class="lede">Almost everything a robot is made of is designed, built or sold within an hour of Shenzhen. This page is the case for going now, and the week in detail.</p>
@@ -318,11 +350,12 @@ h3,summary{font-weight:400;font-size:calc(.645 * clamp(22px,1.9vw,27px))}
 </section>
 
 <section class="band gallery" aria-label="Photos of Shenzhen">
-<div class="gal-head"><p class="label"><span class="dot"></span>Shenzhen, up close</p><div class="gal-nav"><span class="gal-count" aria-live="polite">1 / 5</span><button type="button" class="gal-btn prev" aria-label="Previous photo">&#8592;</button><button type="button" class="gal-btn next" aria-label="Next photo">&#8594;</button></div></div>
-<ul class="track" tabindex="0"><li class="slide"><figure class="shot"><div class="treat"><img src="../images/shenzhen/agri-drones.jpg" alt="Agricultural drones in a DJI store, Shenzhen"></div><figcaption><span>Agricultural drones in a DJI store, Shenzhen</span><span><a href="https://commons.wikimedia.org/wiki/File:DJI_Agriculture_Drones_in_DJI_Store_20250501.jpg" target="_blank" rel="noopener">Steven Sun, CC BY-SA 4.0</a></span></figcaption></figure></li><li class="slide"><figure class="shot"><div class="treat"><img src="../images/shenzhen/robot-shop.jpg" alt="A robot-run shop by Galbot, Bao'an"></div><figcaption><span>A robot-run shop by Galbot, Bao'an</span><span><a href="https://commons.wikimedia.org/wiki/File:SZ_%E6%B7%B1%E5%9C%B3_Shenzhen_%E5%AF%B6%E5%AE%89_BaoAn_%E6%99%AF%E5%BE%9E%E8%B7%AF_Jingcong_Road_n_%E5%92%8C%E5%8C%AF%E8%B7%AF_HeHui_Road_shop_%E9%8A%80%E6%B2%B3%E5%A4%AA%E7%A9%BA%E8%89%99_Galbot_Store_beverage_booth_HooLoo_Coffee_October_2025_R12S_07.jpg" target="_blank" rel="noopener">Wikimedia Commons, CC0</a></span></figcaption></figure></li><li class="slide"><figure class="shot"><div class="treat"><img src="../images/shenzhen/drone-counter.jpg" loading="lazy" alt="A drone counter at Huaqiang Electronic World"></div><figcaption><span>A drone counter at Huaqiang Electronic World</span><span><a href="https://commons.wikimedia.org/wiki/File:Quadcopter_drone_vendor_at_Shenzhen_Huaqiang_Electronic_World.jpg" target="_blank" rel="noopener">Benlisquare, CC BY-SA 4.0, faces blurred</a></span></figcaption></figure></li><li class="slide"><figure class="shot"><div class="treat"><img src="../images/shenzhen/factory-floor.jpg" loading="lazy" alt="An electronics factory in Shenzhen"></div><figcaption><span>An electronics factory in Shenzhen</span><span><a href="https://commons.wikimedia.org/wiki/File:Electronics_factory_in_Shenzhen.jpg" target="_blank" rel="noopener">Steve Jurvetson, CC BY 2.0</a></span></figcaption></figure></li><li class="slide"><figure class="shot"><div class="treat"><img src="../images/shenzhen/pcb-line.jpg" loading="lazy" alt="A circuit-board production line, Shenzhen"></div><figcaption><span>A circuit-board production line, Shenzhen</span><span><a href="https://www.flickr.com/photos/67734410@N00/38194655811" target="_blank" rel="noopener">Mitch Altman (maltman23), CC BY-SA 2.0</a></span></figcaption></figure></li></ul>
+<div class="gal-head"><h2>Shenzhen up close</h2><div class="gal-nav"><span class="gal-count" aria-live="polite">1 / 5</span><button type="button" class="gal-btn prev" aria-label="Previous photo">← Previous</button><button type="button" class="gal-btn next" aria-label="Next photo">Next →</button></div></div>
+<p class="gallery-hint" id="gallery-help">Use the arrows or swipe to browse the photos.</p>
+<ul class="track" tabindex="0" aria-label="Shenzhen photo gallery" aria-describedby="gallery-help"><li class="slide"><figure class="shot"><div class="treat"><img src="../images/shenzhen/agri-drones.jpg" alt="Agricultural drones in a DJI store, Shenzhen"></div><figcaption><span>Agricultural drones in a DJI store, Shenzhen</span><span><a href="https://commons.wikimedia.org/wiki/File:DJI_Agriculture_Drones_in_DJI_Store_20250501.jpg" target="_blank" rel="noopener">Steven Sun, CC BY-SA 4.0</a></span></figcaption></figure></li><li class="slide"><figure class="shot"><div class="treat"><img src="../images/shenzhen/robot-shop.jpg" alt="A robot-run shop by Galbot, Bao'an"></div><figcaption><span>A robot-run shop by Galbot, Bao'an</span><span><a href="https://commons.wikimedia.org/wiki/File:SZ_%E6%B7%B1%E5%9C%B3_Shenzhen_%E5%AF%B6%E5%AE%89_BaoAn_%E6%99%AF%E5%BE%9E%E8%B7%AF_Jingcong_Road_n_%E5%92%8C%E5%8C%AF%E8%B7%AF_HeHui_Road_shop_%E9%8A%80%E6%B2%B3%E5%A4%AA%E7%A9%BA%E8%89%99_Galbot_Store_beverage_booth_HooLoo_Coffee_October_2025_R12S_07.jpg" target="_blank" rel="noopener">Wikimedia Commons, CC0</a></span></figcaption></figure></li><li class="slide"><figure class="shot"><div class="treat"><img src="../images/shenzhen/drone-counter.jpg" loading="lazy" alt="A drone counter at Huaqiang Electronic World"></div><figcaption><span>A drone counter at Huaqiang Electronic World</span><span><a href="https://commons.wikimedia.org/wiki/File:Quadcopter_drone_vendor_at_Shenzhen_Huaqiang_Electronic_World.jpg" target="_blank" rel="noopener">Benlisquare, CC BY-SA 4.0, faces blurred</a></span></figcaption></figure></li><li class="slide"><figure class="shot"><div class="treat"><img src="../images/shenzhen/factory-floor.jpg" loading="lazy" alt="An electronics factory in Shenzhen"></div><figcaption><span>An electronics factory in Shenzhen</span><span><a href="https://commons.wikimedia.org/wiki/File:Electronics_factory_in_Shenzhen.jpg" target="_blank" rel="noopener">Steve Jurvetson, CC BY 2.0</a></span></figcaption></figure></li><li class="slide"><figure class="shot"><div class="treat"><img src="../images/shenzhen/pcb-line.jpg" loading="lazy" alt="A circuit-board production line, Shenzhen"></div><figcaption><span>A circuit-board production line, Shenzhen</span><span><a href="https://www.flickr.com/photos/67734410@N00/38194655811" target="_blank" rel="noopener">Mitch Altman (maltman23), CC BY-SA 2.0</a></span></figcaption></figure></li></ul>
 </section>
 <section id="numbers">
-<div class="wide"><p class="label"><span class="dot"></span>In numbers</p><dl class="stats"><div><dt><a href="https://ifr.org/ifr-press-releases/news/global-robot-demand-in-factories-doubles-over-10-years" target="_blank" rel="noopener">IFR World Robotics 2025</a></dt><dd>54%</dd><p>of the world's new industrial robots were installed in China in 2024</p></div><div><dt><a href="https://restofworld.org/2026/china-robot-ban-silicon-valley/" target="_blank" rel="noopener">Omdia, via Rest of World</a></dt><dd>~90%</dd><p>of humanoids sold worldwide in 2025 were Chinese</p></div><div><dt><a href="https://fgw.sz.gov.cn/ztzl/qtztzl/szscjmyjjfzzhfwpt/xwzl/cyfz/content/post_12750929.html" target="_blank" rel="noopener">Shenzhen Development and Reform Commission</a></dt><dd>RMB 243B</dd><p>Shenzhen robotics output in 2025, up 20.6% on 2024</p></div><div><dt><a href="https://www.szns.gov.cn/english/news/latestnews/content/post_12878323.html" target="_blank" rel="noopener">Nanshan District</a></dt><dd>200+</dd><p>robotics supply-chain companies in Nanshan's Robot Valley</p></div></dl></div>
+<div class="wide"><h2>In numbers</h2><dl class="stats"><div><dt><a href="https://ifr.org/ifr-press-releases/news/global-robot-demand-in-factories-doubles-over-10-years" target="_blank" rel="noopener">IFR World Robotics 2025</a></dt><dd>54%</dd><p>of the world's new industrial robots were installed in China in 2024</p></div><div><dt><a href="https://restofworld.org/2026/china-robot-ban-silicon-valley/" target="_blank" rel="noopener">Omdia, via Rest of World</a></dt><dd>~90%</dd><p>of humanoids sold worldwide in 2025 were Chinese</p></div><div><dt><a href="https://fgw.sz.gov.cn/ztzl/qtztzl/szscjmyjjfzzhfwpt/xwzl/cyfz/content/post_12750929.html" target="_blank" rel="noopener">Shenzhen Development and Reform Commission</a></dt><dd>RMB 243B</dd><p>Shenzhen robotics output in 2025, up 20.6% on 2024</p></div><div><dt><a href="https://www.szns.gov.cn/english/news/latestnews/content/post_12878323.html" target="_blank" rel="noopener">Nanshan District</a></dt><dd>200+</dd><p>robotics supply-chain companies in Nanshan's Robot Valley</p></div></dl></div>
 </section>
 
 <section id="voices">
@@ -354,7 +387,7 @@ h3,summary{font-weight:400;font-size:calc(.645 * clamp(22px,1.9vw,27px))}
 <section id="hosts">
 <div class="row">
 <div><p class="hosts-label">companies on the provisional itinerary</p><p class="small" style="margin-top:14px">Companies we can arrange to visit. The week covers a selection, matched to the group, and is confirmed in writing in November. Not partners or sponsors.</p></div>
-<div><p class="tier-label">Robot makers</p><ul class="host-logos tier t1"><li><img style="--m:0.500" src="../images/hosts/ubtech.svg" alt="UBTech" title="UBTech"></li><li><img style="--m:0.560" src="../images/hosts/limx.svg" alt="LimX Dynamics" title="LimX Dynamics"></li><li><img style="--m:0.520" src="../images/hosts/engineai.png" alt="EngineAI" title="EngineAI"></li><li><img style="--m:0.500" src="../images/hosts/dobot.svg" alt="Dobot" title="Dobot"></li><li><img style="--m:0.620" src="../images/hosts/dji.svg" alt="DJI" title="DJI"></li><li><img style="--m:0.500" src="../images/hosts/byd.svg" alt="BYD" title="BYD"></li><li><img style="--m:0.420" src="../images/hosts/kuka.svg" alt="KUKA" title="KUKA"></li><li><img style="--m:0.430" src="../images/hosts/brainco.png" alt="BrainCo" title="BrainCo"></li></ul><p class="tier-label">Mobility, drones and new hardware</p><ul class="host-logos tier t2"><li><img style="--m:0.620" src="../images/hosts/baidu.svg" alt="Baidu Apollo Go" title="Baidu Apollo Go"></li><li><img style="--m:0.600" src="../images/hosts/pony.png" alt="Pony.ai" title="Pony.ai"></li><li><img style="--m:0.340" src="../images/hosts/xpeng.svg" alt="XPeng" title="XPeng"></li><li><img style="--m:0.620" src="../images/hosts/sf-express.png" alt="SF Express" title="SF Express"></li><li><img style="--m:0.500" src="../images/hosts/meituan.png" alt="Meituan" title="Meituan"></li><li><img style="--m:0.400" src="../images/hosts/ehang.svg" alt="EHang" title="EHang"></li><li><img style="--m:0.600" src="../images/hosts/bambulab.svg" alt="Bambu Lab" title="Bambu Lab"></li><li><img style="--m:0.340" src="../images/hosts/seeed-studio.png" alt="Seeed Studio" title="Seeed Studio"></li></ul><p class="tier-label">Factories and industry</p><ul class="host-logos tier t3"><li><img style="--m:0.420" src="../images/hosts/lenovo.svg" alt="Lenovo" title="Lenovo"></li><li><img style="--m:0.360" src="../images/hosts/oppo.svg" alt="OPPO" title="OPPO"></li><li><img style="--m:0.550" src="../images/hosts/midea.svg" alt="Midea" title="Midea"></li><li><img style="--m:0.340" src="../images/hosts/fanuc.svg" alt="FANUC" title="FANUC"></li><li><img style="--m:0.300" src="../images/hosts/siemens.svg" alt="Siemens" title="Siemens"></li><li><img style="--m:0.300" src="../images/hosts/sunwoda.svg" alt="Sunwoda" title="Sunwoda"></li><li><img style="--m:0.300" src="../images/hosts/skyworth.svg" alt="Skyworth" title="Skyworth"></li><li><img style="--m:0.550" src="../images/hosts/iflytek.png" alt="iFlytek" title="iFlytek"></li><li><img style="--m:0.600" src="../images/hosts/sensetime.png" alt="SenseTime" title="SenseTime"></li><li><img style="--m:0.550" src="../images/hosts/mindray.png" alt="Mindray" title="Mindray"></li><li><img style="--m:0.500" src="../images/hosts/zte.svg" alt="ZTE" title="ZTE"></li></ul></div>
+<div><p class="tier-label">Robot makers</p><ul class="host-logos tier t1"><li><a href="https://www.ubtrobot.com/" target="_blank" rel="noopener noreferrer" aria-label="UBTech website"><img style="--m:0.500" src="../images/hosts/ubtech.svg" alt="UBTech" title="UBTech"></a></li><li><a href="https://www.limxdynamics.com/en" target="_blank" rel="noopener noreferrer" aria-label="LimX Dynamics website"><img style="--m:0.560" src="../images/hosts/limx.svg" alt="LimX Dynamics" title="LimX Dynamics"></a></li><li><a href="https://www.engineai.com.cn/" target="_blank" rel="noopener noreferrer" aria-label="EngineAI website"><img style="--m:0.520" src="../images/hosts/engineai.png" alt="EngineAI" title="EngineAI"></a></li><li><a href="https://www.dobot-robots.com/" target="_blank" rel="noopener noreferrer" aria-label="Dobot website"><img style="--m:0.500" src="../images/hosts/dobot.svg" alt="Dobot" title="Dobot"></a></li><li><a href="https://www.dji.com/" target="_blank" rel="noopener noreferrer" aria-label="DJI website"><img style="--m:0.620" src="../images/hosts/dji.svg" alt="DJI" title="DJI"></a></li><li><a href="https://www.byd.com/" target="_blank" rel="noopener noreferrer" aria-label="BYD website"><img style="--m:0.500" src="../images/hosts/byd.svg" alt="BYD" title="BYD"></a></li><li><a href="https://www.kuka.com/" target="_blank" rel="noopener noreferrer" aria-label="KUKA website"><img style="--m:0.420" src="../images/hosts/kuka.svg" alt="KUKA" title="KUKA"></a></li><li><a href="https://www.brainco.tech/" target="_blank" rel="noopener noreferrer" aria-label="BrainCo website"><img style="--m:0.430" src="../images/hosts/brainco.png" alt="BrainCo" title="BrainCo"></a></li></ul><p class="tier-label">Mobility, drones and new hardware</p><ul class="host-logos tier t2"><li><a href="https://apollogo.com/" target="_blank" rel="noopener noreferrer" aria-label="Baidu Apollo Go website"><img style="--m:0.620" src="../images/hosts/baidu.svg" alt="Baidu Apollo Go" title="Baidu Apollo Go"></a></li><li><a href="https://pony.ai/" target="_blank" rel="noopener noreferrer" aria-label="Pony.ai website"><img style="--m:0.600" src="../images/hosts/pony.png" alt="Pony.ai" title="Pony.ai"></a></li><li><a href="https://www.xpeng.com/" target="_blank" rel="noopener noreferrer" aria-label="XPeng website"><img style="--m:0.340" src="../images/hosts/xpeng.svg" alt="XPeng" title="XPeng"></a></li><li><a href="https://www.sf-express.com/" target="_blank" rel="noopener noreferrer" aria-label="SF Express website"><img style="--m:0.620" src="../images/hosts/sf-express.png" alt="SF Express" title="SF Express"></a></li><li><a href="https://www.meituan.com/" target="_blank" rel="noopener noreferrer" aria-label="Meituan website"><img style="--m:0.500" src="../images/hosts/meituan.png" alt="Meituan" title="Meituan"></a></li><li><a href="https://www.ehang.com/" target="_blank" rel="noopener noreferrer" aria-label="EHang website"><img style="--m:0.400" src="../images/hosts/ehang.svg" alt="EHang" title="EHang"></a></li><li><a href="https://bambulab.com/" target="_blank" rel="noopener noreferrer" aria-label="Bambu Lab website"><img style="--m:0.600" src="../images/hosts/bambulab.svg" alt="Bambu Lab" title="Bambu Lab"></a></li><li><a href="https://www.seeedstudio.com/" target="_blank" rel="noopener noreferrer" aria-label="Seeed Studio website"><img style="--m:0.340" src="../images/hosts/seeed-studio.png" alt="Seeed Studio" title="Seeed Studio"></a></li></ul><p class="tier-label">Factories and industry</p><ul class="host-logos tier t3"><li><a href="https://www.lenovo.com/" target="_blank" rel="noopener noreferrer" aria-label="Lenovo website"><img style="--m:0.420" src="../images/hosts/lenovo.svg" alt="Lenovo" title="Lenovo"></a></li><li><a href="https://www.oppo.com/" target="_blank" rel="noopener noreferrer" aria-label="OPPO website"><img style="--m:0.360" src="../images/hosts/oppo.svg" alt="OPPO" title="OPPO"></a></li><li><a href="https://www.midea.com/" target="_blank" rel="noopener noreferrer" aria-label="Midea website"><img style="--m:0.550" src="../images/hosts/midea.svg" alt="Midea" title="Midea"></a></li><li><a href="https://www.fanuc.com/" target="_blank" rel="noopener noreferrer" aria-label="FANUC website"><img style="--m:0.340" src="../images/hosts/fanuc.svg" alt="FANUC" title="FANUC"></a></li><li><a href="https://www.siemens.com/" target="_blank" rel="noopener noreferrer" aria-label="Siemens website"><img style="--m:0.300" src="../images/hosts/siemens.svg" alt="Siemens" title="Siemens"></a></li><li><a href="https://www.sunwoda.com/" target="_blank" rel="noopener noreferrer" aria-label="Sunwoda website"><img style="--m:0.300" src="../images/hosts/sunwoda.svg" alt="Sunwoda" title="Sunwoda"></a></li><li><a href="https://www.skyworth.com/" target="_blank" rel="noopener noreferrer" aria-label="Skyworth website"><img style="--m:0.300" src="../images/hosts/skyworth.svg" alt="Skyworth" title="Skyworth"></a></li><li><a href="https://www.iflytek.com/" target="_blank" rel="noopener noreferrer" aria-label="iFlytek website"><img style="--m:0.550" src="../images/hosts/iflytek.png" alt="iFlytek" title="iFlytek"></a></li><li><a href="https://www.sensetime.com/" target="_blank" rel="noopener noreferrer" aria-label="SenseTime website"><img style="--m:0.600" src="../images/hosts/sensetime.png" alt="SenseTime" title="SenseTime"></a></li><li><a href="https://www.mindray.com/" target="_blank" rel="noopener noreferrer" aria-label="Mindray website"><img style="--m:0.550" src="../images/hosts/mindray.png" alt="Mindray" title="Mindray"></a></li><li><a href="https://www.zte.com.cn/" target="_blank" rel="noopener noreferrer" aria-label="ZTE website"><img style="--m:0.500" src="../images/hosts/zte.svg" alt="ZTE" title="ZTE"></a></li></ul></div>
 </div>
 </section>
 
@@ -368,7 +401,7 @@ h3,summary{font-weight:400;font-size:calc(.645 * clamp(22px,1.9vw,27px))}
 </div>
 </section>
 
-<footer style="padding:40px var(--pad);border-top:1px solid var(--line)"><span class="mark">Delta &amp; Bay</span></footer>
+<footer style="padding:40px var(--pad);border-top:1px solid var(--line)"><span class="mark">Delta &amp; Bay</span><details class="photo-credits"><summary>Photo credits</summary><p>Shenzhen Bay at night · <a href="https://commons.wikimedia.org/w/index.php?curid=80858302" target="_blank" rel="noopener">Sparktour, CC BY-SA 4.0</a></p></details></footer>
 <script>
 (function(){
   var g=document.querySelector('.gallery'); if(!g) return;
@@ -376,7 +409,7 @@ h3,summary{font-weight:400;font-size:calc(.645 * clamp(22px,1.9vw,27px))}
   var smooth=!window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   function idx(){var x=t.getBoundingClientRect().left+parseFloat(getComputedStyle(t).paddingLeft), best=0, d=1e9; sl.forEach(function(s,i){var e=Math.abs(s.getBoundingClientRect().left-x); if(e<d){d=e;best=i}}); return best}
   function upd(){var i=idx(); c.textContent=(i+1)+' / '+sl.length; pv.disabled=i===0; nx.disabled=t.scrollLeft+t.clientWidth>=t.scrollWidth-4}
-  function go(d){var step=sl[0].getBoundingClientRect().width+parseFloat(getComputedStyle(t).columnGap||16); t.scrollBy({left:d*step,behavior:smooth?'smooth':'auto'})}
+  function go(d){var next=Math.max(0,Math.min(sl.length-1,idx()+d)); t.scrollTo({left:sl[next].offsetLeft-sl[0].offsetLeft,behavior:smooth?'smooth':'auto'})}
   pv.addEventListener('click',function(){go(-1)}); nx.addEventListener('click',function(){go(1)});
   t.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){e.preventDefault();go(1)}if(e.key==='ArrowLeft'){e.preventDefault();go(-1)}});
   var r; t.addEventListener('scroll',function(){clearTimeout(r); r=setTimeout(upd,60)}); window.addEventListener('resize',upd); upd();
