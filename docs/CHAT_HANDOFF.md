@@ -2,6 +2,14 @@
 
 Read this before changing the site. This document records decisions and results from the website audit and follow-up chat. It is a practical handoff, not a verbatim transcript. GitHub `main` and the deployed source are the authority for what has shipped. Local edits and open branches may contain work from simultaneous chats.
 
+## 1 November 2026: five-day trip (Shawn's decision, supersedes the pricing and itinerary notes below)
+
+- Trip is now **five days, 11–15 January 2027** (4 nights). Homepage (`3d-night/`) rebuilt from the approved draft: hero headline **Five days in Shenzhen**, "11–15 January 2027 · from $3,900", **Apply for a place**, "10–20 places". The hero is Shawn's own ROBOTECH photo (graded blue in the file), not the skyline video; the video files stay in `video/` but are no longer used, and `tests/video.test.mjs` was removed with it.
+- New section **Shenzhen this month**: six of Shawn's own photos from October 2026 (ROBOTECH, Huaqiangbei). Itinerary days each have a photo. All in `images/trip/`.
+- Price: **Early bird $3,900** (deposit paid by 30 November), **Regular $4,900**; $250 off each for two or more from the same company; four nights included. Balance due **11 December**; trip runs if **10 people have paid in full by 11 December**. Matches booking contract v1.4 in the planning folder.
+- Host logos stay, labelled "Companies on the provisional itinerary": UBTech, XPeng, LimX, EngineAI, Orbbec, ZeroErr, BrainCo, BYD, DJI, SF Express, Baidu Apollo Go. "Also possible" line covers the drone base, robotaxi and carmaker factory.
+- `/shenzhen/` rewritten for five days ("The five days in depth"), Orbbec and ZeroErr added to the company wall, "Join us" updated. `/apply/` dates and description say 11–15 January / five days.
+
 ## 20 October 2026: deposit and pricing (Shawn's decision)
 
 - Price section shows only **Founding $8,900** and **Early bird $9,900**; Regular and Final call are removed for now. Note under the table: "A $500 deposit holds your place and your price."
