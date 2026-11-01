@@ -2,6 +2,10 @@
 
 Read this before changing the site. This document records decisions and results from the website audit and follow-up chat. It is a practical handoff, not a verbatim transcript. GitHub `main` and the deployed source are the authority for what has shipped. Local edits and open branches may contain work from simultaneous chats.
 
+## 1 November 2026, later: prices raised (Shawn's decision)
+
+- **Early bird $6,300** (deposit paid by 30 November), **Regular $7,300**. Replaces $3,900 / $4,900 everywhere on the homepage and `/shenzhen/` ("from $6,300"). Everything else in the five-day section below is unchanged.
+
 ## 1 November 2026: five-day trip (Shawn's decision, supersedes the pricing and itinerary notes below)
 
 - Trip is now **five days, 11–15 January 2027** (4 nights). Homepage (`3d-night/`) rebuilt from the approved draft: hero headline **Five days in Shenzhen**, "11–15 January 2027 · from $3,900", **Apply for a place**, "10–20 places". The hero is Shawn's own ROBOTECH photo (graded blue in the file), not the skyline video; the video files stay in `video/` but are no longer used, and `tests/video.test.mjs` was removed with it.
