@@ -1,6 +1,6 @@
 -- Tap-to-choose questions added to /apply on 16 Oct 2026, so the 15-minute call can be prepared in advance.
--- NOT YET APPLIED. Apply in the Supabase SQL editor BEFORE deploying the new apply/index.html:
--- the new form sends these columns, and inserts fail until they exist.
+-- Verified present in production on 2026-11-02: columns, constraints and INSERT grants
+-- match this migration. Do not rerun it against an already-migrated database.
 -- All columns are nullable so earlier applications stay valid. The personal website field left the form;
 -- its column stays for existing rows.
 begin;

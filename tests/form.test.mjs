@@ -21,11 +21,11 @@ function setup(response=()=>Promise.resolve({ok:true,status:201})) {
   const group=(name,picks)=>(html.match(new RegExp('name="'+name+'" value="([^"]+)"','g'))||[]).map(m=>{const value=m.match(/value="([^"]+)"/)[1];return {value,checked:picks.includes(value)};});
   elements.wants=group('wants',['Factory visits','The electronics market']);elements.parts=group('parts',[]);
   const groupField={classList:{set:new Set(),toggle(k,on){on?this.set.add(k):this.set.delete(k);}},scrollIntoView(){}};
-  let submit,requests=0,lastPayload;
-  const form={elements,querySelectorAll:()=>Object.values(elements).filter(e=>!Array.isArray(e)),addEventListener:(event,fn)=>{if(event==='submit')submit=fn;},querySelector:selector=>selector==='button'?button:error};
+  let submit,change,requests=0,lastPayload;
+  const form={elements,querySelectorAll:()=>Object.values(elements).filter(e=>!Array.isArray(e)),addEventListener:(event,fn)=>{if(event==='submit')submit=fn;if(event==='change')change=fn;},querySelector:selector=>selector==='button'?button:error};
   const sandbox={URL,document:{getElementById:id=>id==='apply'?form:id==='wants-field'?groupField:first,body:{classList:{add:k=>classes.add(k)}}},scrollTo(){},fetch:(url,options)=>{requests++;lastPayload=JSON.parse(options.body);return response();}};
   vm.createContext(sandbox);vm.runInContext(source,sandbox);
-  return {sandbox,groupField,elements,button,error,classes,errors,first,submit:()=>submit({preventDefault(){}}),requests:()=>requests,payload:()=>lastPayload};
+  return {sandbox,groupField,elements,button,error,classes,errors,first,submit:()=>submit({preventDefault(){}}),change:target=>change({target}),requests:()=>requests,payload:()=>lastPayload};
 }
 test('the personal website field is gone from the form and the payload',()=>{
   assert.equal(/name="website"/.test(html),false);
@@ -84,16 +84,30 @@ test('network errors recover the submit button without false success',async()=>{
   assert.equal(s.classes.has('sent'),false);assert.equal(s.button.disabled,false);assert.equal(s.errors.has('show'),true);
 });
 
-test('before the database has the new columns, a 400 resends the application in the original format',async()=>{
-  let calls=0;
-  const s=setup(()=>Promise.resolve(++calls===1?{ok:false,status:400}:{ok:true,status:201}));
+test('a 400 preserves full answers and never silently resubmits a reduced application',async()=>{
+  const s=setup(()=>Promise.resolve({ok:false,status:400}));
+  s.elements.why.value='a'.repeat(4000);
   s.elements.dates.value='Not sure yet';s.submit();
-  await new Promise(setImmediate);await new Promise(setImmediate);
-  assert.equal(s.requests(),2);assert.equal(s.classes.has('sent'),true);
+  await new Promise(setImmediate);
+  assert.equal(s.requests(),1);assert.equal(s.classes.has('sent'),false);
   const p=s.payload();
-  for(const k of ['stage','timing','wants','parts','teammate']) assert.equal(k in p,false,k);
-  assert.equal(p.dates,'No');
-  assert.match(p.why,/\[More answers\] Full trip: Not sure yet · Stage: Prototype · Picking suppliers: In 3–6 months · Wants: Factory visits, The electronics market/);
+  for(const k of ['stage','timing','wants','parts','teammate']) assert.equal(k in p,true,k);
+  assert.equal(p.dates,'Not sure yet');assert.equal(p.why.length,4000);
+  assert.equal(s.elements.why.value.length,4000);assert.equal(s.button.disabled,false);
+});
+
+test('repeated submits while a request is in flight create only one request',async()=>{
+  let finish;const s=setup(()=>new Promise(resolve=>{finish=resolve;}));
+  s.submit();s.submit();assert.equal(s.requests(),1);
+  finish({ok:true,status:201});await new Promise(setImmediate);
+  assert.equal(s.classes.has('sent'),true);
+});
+
+test('choosing a goal clears its earlier required error immediately',()=>{
+ const s=setup();s.elements.wants.forEach(e=>{e.checked=false;});s.submit();
+ assert.equal(s.groupField.classList.set.has('invalid'),true);
+ s.elements.wants[0].checked=true;s.change({type:'checkbox',name:'wants'});
+ assert.equal(s.groupField.classList.set.has('invalid'),false);assert.equal(s.requests(),0);
 });
 test('other failures are not resent',async()=>{
   const s=setup(()=>Promise.resolve({ok:false,status:503}));s.submit();await new Promise(setImmediate);

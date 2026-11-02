@@ -20,7 +20,11 @@ Read this before changing the site. This document records decisions and results 
 - "When do I pay?": $500 deposit invoiced, due within 7 days; balance by 30 November; deposit non-refundable if the traveller cancels but the place is transferable; trip runs only if 15 have paid in full by 30 November, otherwise full refund including deposit. Replaces the 30%/72-hour and minimum-10 wording. Matches booking contract v1.3 in the planning folder.
 - Shenzhen page "Join us" says "paid in full by 30 November" to match.
 
-## 20 October 2026 update (supersedes older design notes below)
+## 2 November 2026 update (supersedes older trip and application notes below)
+
+Current baseline is Shawn's five-day trip, 11–15 January 2027, with $6,300 early bird and $7,300 regular pricing. The live form, Supabase row and delivered internal notification were verified using a labelled QA application. The current schema already supported all questions; its missing migration-history entry was recorded. Removed the lossy legacy retry, prevented overlapping submits, corrected goal validation feedback, and updated stale/inaccurate copy. All six X quotes and all sections are kept at the user's explicit request; quotes remain unverified. Details, sources, tests and limitations: [2 November audit](AUDIT_2026-11-02.md).
+
+## 20 October 2026 update (historical)
 
 - Started from current main `9ac7361`, including Shawn's PRs #9–#11. Current homepage title is **Bridging Frontiers**, in Michroma, with the existing lockup and colours preserved.
 - User's screenshots 1 and 8 refer to the homepage itinerary logos and the `/shenzhen/` company wall. All 8 + 27 marks now link to their company websites with accessible names and keyboard focus styles.
