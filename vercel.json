@@ -1,3 +1,11 @@
 {
-  "rewrites": [{ "source": "/", "destination": "/3d-night/" }]
+  "redirects": [
+    { "source": "/3d-night", "destination": "/", "permanent": false },
+    { "source": "/3d-night/", "destination": "/", "permanent": false },
+    { "source": "/apply", "destination": "/", "permanent": false },
+    { "source": "/apply/", "destination": "/", "permanent": false },
+    { "source": "/shenzhen", "destination": "/", "permanent": false },
+    { "source": "/shenzhen/", "destination": "/", "permanent": false }
+  ],
+  "rewrites": [{ "source": "/", "destination": "/holding/" }]
 }

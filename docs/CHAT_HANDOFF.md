@@ -2,6 +2,11 @@
 
 Read this before changing the site. This document records decisions and results from the website audit and follow-up chat. It is a practical handoff, not a verbatim transcript. GitHub `main` and the deployed source are the authority for what has shipped. Local edits and open branches may contain work from simultaneous chats.
 
+## 5 November 2026: site on holding page (Shawn's decision)
+
+- Shawn asked for the site to be taken down. `/` now serves `holding/`; `/apply/`, `/shenzhen/` and `/3d-night/` redirect to `/` (temporary redirects in `vercel.json`). `/privacy/` stays up.
+- All page files are unchanged. To restore: set `vercel.json` back to `{ "rewrites": [{ "source": "/", "destination": "/3d-night/" }] }`.
+
 ## 1 November 2026, later: prices raised (Shawn's decision)
 
 - **Early bird $6,300** (deposit paid by 30 November), **Regular $7,300**. Replaces $3,900 / $4,900 everywhere on the homepage and `/shenzhen/` ("from $6,300"). Everything else in the five-day section below is unchanged.
