@@ -2,7 +2,9 @@
 
 Read `docs/CHAT_HANDOFF.md` first for current shared context, production decisions and pending requests. Inspect Git status and uncommitted changes before editing; multiple chats may be working simultaneously.
 
-This folder is the home for all work on the delta and bay project (Shenzhen robotics trip landing page). Make every change here.
+This folder is the home for all work on the delta and bay project. Make every change here.
+
+**Since 10 Nov 2026 the live site is the robotics consultancy site** ("Robotics consultancy, SF ⇄ SZ") at the repo root: `index.html` (Consultancy), `sprint.html` (Build Sprint), `request.html` (Requests), `credits.html`, with `css/`, `js/`, `icons/`, `img/` and `shared/` (Montserrat and logo files). It is built in Shawn's planning workspace (`deltatrip/site/consultancy-drafts/v5b-instructions/`, copy in `docs/website-content-v3-2026-11-10.md`); edit there or here, but keep them in sync. The request form saves each request to Supabase project `delta-gtm` (ref `mlovfbrycwvzyiugczoi`), table `public.site_requests` (insert-only for the publishable key; read it in the dashboard), then opens WhatsApp or email. The trip pages below (`3d-night/`, `apply/`, `shenzhen/`, `holding/`) are kept in the repo but redirect to `/`. The notes below describe the old trip site.
 
 - Brand: **Delta & Bay**, capitalised, with an ampersand (Shawn, 16 Oct 2026; replaces the earlier lowercase request). Use `deltaandbay` for folders, repos, file names and URLs. Formerly delta and bay, bay^2 (baysquared), before that SOMMER.
 - Hero title: **Bridging Frontiers**, with "Shenzhen · San Francisco", the dates, **Apply for a place** and "Applications reviewed on a rolling basis · ~20 places" under it. The name sits under the monogram top-left as the brand-kit lockup (`images/deltaandbay_lockup_ivory.svg`, outlines from Shawn's LinkedIn logo; never retype it). Navigation, section headings and buttons use sentence case.

@@ -108,3 +108,11 @@ Apollo Go was the exception: the old row used Baidu's parent-company paw. It now
 - Original working folder had an unresolved README merge and existing staged brand files. Preserve unrelated work. `.audit-work` was a separate clean clone, but simultaneous chats have since edited its homepage. At handoff, those uncommitted edits included Montserrat and “Delta & Bay”; their approval/deployment status was not verified. This handoff/font-preview task uses another isolated checkout.
 - Before editing: fetch GitHub, inspect branch/status/diff and reread this file. Record new approved decisions here. Before reporting “deployed”: verify the live domain actually serves the new content; a push or successful Vercel status alone can precede the domain updating.
 - Keep credentials, real applicant records and private personal details out of GitHub context documents. The operational summary is intentional; the full conversation is not published verbatim.
+
+## 10 November 2026: consultancy site goes live
+
+- Shawn pivoted from the January trip to a robotics consultancy (SF and Shenzhen). He picked draft "Instructions" of six, approved its copy and handpicked licensed online photos (no phone photos), then asked to push it live.
+- New site at the repo root (index, sprint, request, credits). `vercel.json` no longer rewrites `/` to `/holding/`; old trip paths and `/holding` redirect to `/`.
+- Request form: saves to Supabase `delta-gtm` (`mlovfbrycwvzyiugczoi`), table `public.site_requests`, insert-only for the publishable key, then opens WhatsApp (+44 7376 975831) or mailto info@deltaandbay.com. No email notification yet.
+- Privacy page rewritten for requests (12-month retention after last contact; trip applications still covered).
+- Still to confirm: Build Sprint dates (11 to 22 January 2027 shown with a dotted "to be confirmed" mark).

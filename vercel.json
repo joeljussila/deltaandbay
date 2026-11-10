@@ -5,7 +5,8 @@
     { "source": "/apply", "destination": "/", "permanent": false },
     { "source": "/apply/", "destination": "/", "permanent": false },
     { "source": "/shenzhen", "destination": "/", "permanent": false },
-    { "source": "/shenzhen/", "destination": "/", "permanent": false }
-  ],
-  "rewrites": [{ "source": "/", "destination": "/holding/" }]
+    { "source": "/shenzhen/", "destination": "/", "permanent": false },
+    { "source": "/holding", "destination": "/", "permanent": false },
+    { "source": "/holding/", "destination": "/", "permanent": false }
+  ]
 }
