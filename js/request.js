@@ -261,7 +261,7 @@
   }
   function cut(s, n) { return s ? String(s).slice(0, n) : null; }
   function save(kind) {
-    if (!window.fetch) return;
+    if (!window.fetch) return Promise.reject(new Error('no fetch'));
     var row = {
       channel: kind,
       needs: needs.filter(function (n) { return n.checked; }).map(function (n) { return n.value; }),
@@ -279,12 +279,12 @@
     };
     try {
       // keepalive lets the save finish even if the page hands over to WhatsApp or mail
-      fetch(SB_URL, {
+      return fetch(SB_URL, {
         method: 'POST', keepalive: true,
         headers: { apikey: SB_KEY, 'Content-Type': 'application/json', Prefer: 'return=minimal' },
         body: JSON.stringify(row)
-      }).catch(function () { /* the WhatsApp or email copy still reaches us */ });
-    } catch (err) { /* same */ }
+      }).then(function (r) { if (!r.ok) throw new Error('save failed ' + r.status); return r; });
+    } catch (err) { return Promise.reject(err); }
   }
   function onSend(kind, e) {
     tried = true;
@@ -296,7 +296,7 @@
     }
     summary.hidden = true;
     lastMessage = message();
-    if (lastMessage !== savedMessage) { save(kind); savedMessage = lastMessage; }
+    if (lastMessage !== savedMessage) { save(kind).catch(function () { /* the WhatsApp or email copy still reaches us */ }); savedMessage = lastMessage; }
     seatAll(false);
     if (kind === 'whatsapp') {
       sendWa.href = 'https://wa.me/' + PHONE + '?text=' + encodeURIComponent(lastMessage);
@@ -307,6 +307,32 @@
     window.setTimeout(function () { showThanks(kind); }, 80);
   }
   sendWa.addEventListener('click', function (e) { onSend('whatsapp', e); });
+  // "Send request": saves only, waits for Supabase, then shows the thank-you (or an error).
+  var sendForm = $('send-form');
+  var sendErr = $('send-err');
+  if (sendForm) sendForm.addEventListener('click', function () {
+    if (sendForm.getAttribute('aria-busy') === 'true') return;
+    tried = true;
+    var problems = check();
+    if (problems.length) { showSummary(problems); return; }
+    summary.hidden = true;
+    sendErr.hidden = true;
+    lastMessage = message();
+    if (lastMessage === savedMessage) { showThanks('form'); return; }
+    var label = sendForm.querySelector('span');
+    sendForm.setAttribute('aria-busy', 'true');
+    label.textContent = 'Sending';
+    seatAll(false);
+    save('form').then(function () {
+      savedMessage = lastMessage;
+      showThanks('form');
+    }, function () {
+      sendErr.hidden = false;
+    }).then(function () {
+      sendForm.removeAttribute('aria-busy');
+      label.textContent = 'Send request';
+    });
+  });
   sendEm.addEventListener('click', function (e) { onSend('email', e); });
 
   $('back-form').addEventListener('click', function () {

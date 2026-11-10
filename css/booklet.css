@@ -888,3 +888,8 @@ html:active-view-transition-type(back)::view-transition-old(root) { animation: u
 .contact--card .btn { width: 100%; justify-content: flex-start; }
 @media (min-width: 640px) { .payer { grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr)); } }
 .payer .opt-label, .opt-label { min-width: 0; overflow-wrap: anywhere; }
+
+/* direct send (10 Nov): saves to Supabase without leaving the page */
+.no-js #send-form { display: none; }
+#send-form[aria-busy="true"] { opacity: 0.7; cursor: progress; }
+.send-err { font-size: 15px; font-weight: 650; color: #9b1c1c; max-width: 60ch; }

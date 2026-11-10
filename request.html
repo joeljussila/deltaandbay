@@ -56,6 +56,8 @@
         </div>
 
       <div class="thanks" id="thanks" tabindex="-1" hidden>
+        <h2 data-for="form" hidden><span class="thanks-mark" aria-hidden="true"><svg class="ico"><use href="icons/sprite.svg#check"/></svg></span><span>Thanks, your request is in.</span></h2>
+        <p data-for="form" hidden>It has reached Shawn. If it’s urgent, message <a href="https://wa.me/447376975831" target="_blank" rel="noopener">+44 7376 975831</a> on WhatsApp.</p>
         <h2 data-for="whatsapp"><span class="thanks-mark" aria-hidden="true"><svg class="ico"><use href="icons/sprite.svg#check"/></svg></span><span>Your message is ready in WhatsApp.</span></h2>
         <p data-for="whatsapp">Press send there and it reaches Shawn. If WhatsApp didn’t open, message <a href="https://wa.me/447376975831" target="_blank" rel="noopener">+44 7376 975831</a> or email <a href="mailto:info@deltaandbay.com">info@deltaandbay.com</a>.</p>
         <h2 data-for="email" hidden><span class="thanks-mark" aria-hidden="true"><svg class="ico"><use href="icons/sprite.svg#check"/></svg></span><span>Your email is ready.</span></h2>
@@ -204,11 +206,13 @@
       </aside>
 
       <div class="send">
-          <p class="privacy">When you press send, we keep a copy of your request so we can reply, and WhatsApp or your mail app opens with it written out. We only use it to answer you. There’s no mailing list.</p>
+          <p class="privacy">When you press send, we keep a copy of your request so we can reply. We only use it to answer you. There’s no mailing list.</p>
           <div class="btn-row">
-            <a class="btn btn--new" id="send-wa" href="https://wa.me/447376975831" target="_blank" rel="noopener" data-send="whatsapp"><svg class="ico" aria-hidden="true"><use href="icons/sprite.svg#whatsapp"/></svg>Send on WhatsApp</a>
+            <button class="btn btn--new" type="button" id="send-form" data-send="form"><svg class="ico" aria-hidden="true"><use href="icons/sprite.svg#paper-plane-tilt"/></svg><span>Send request</span></button>
+            <a class="btn btn--line" id="send-wa" href="https://wa.me/447376975831" target="_blank" rel="noopener" data-send="whatsapp"><svg class="ico" aria-hidden="true"><use href="icons/sprite.svg#whatsapp"/></svg>Send on WhatsApp</a>
             <a class="btn btn--line" id="send-em" href="mailto:info@deltaandbay.com" data-send="email"><svg class="ico" aria-hidden="true"><use href="icons/sprite.svg#envelope-simple"/></svg>Send by email</a>
           </div>
+          <p class="send-err" id="send-err" role="alert" hidden>We couldn’t send that just now. Please try again, or send it on WhatsApp or by email.</p>
           <p class="fallback">If the buttons don’t open anything, message Shawn on WhatsApp at <a href="https://wa.me/447376975831" target="_blank" rel="noopener">+44 7376 975831</a> or email <a href="mailto:info@deltaandbay.com">info@deltaandbay.com</a>.</p>
         </div>
     </form>
