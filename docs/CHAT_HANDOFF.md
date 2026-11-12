@@ -119,4 +119,4 @@ Apollo Go was the exception: the old row used Baidu's parent-company paw. It now
 
 ## 12 November 2026: Build Sprint price raised (Shawn's decision)
 
-- Build Sprint now shows **US$1,200 per person, subject to change** (was US$600). Shawn isn't sure the cost can stay under US$600. The month after is unchanged at US$1,200, so for now both lines show the same price.
+- Build Sprint now shows **US$1,200 per person, subject to change** (was US$600). Shawn isn't sure the cost can stay under US$600. The month after is now **US$2,400 per person** (Shawn, same day).
