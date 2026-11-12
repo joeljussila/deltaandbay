@@ -116,3 +116,7 @@ Apollo Go was the exception: the old row used Baidu's parent-company paw. It now
 - Request form: saves to Supabase `delta-gtm` (`mlovfbrycwvzyiugczoi`), table `public.site_requests`, insert-only for the publishable key, then opens WhatsApp (+44 7376 975831) or mailto info@deltaandbay.com. No email notification yet.
 - Privacy page rewritten for requests (12-month retention after last contact; trip applications still covered).
 - Still to confirm: Build Sprint dates (11 to 22 January 2027 shown with a dotted "to be confirmed" mark).
+
+## 12 November 2026: Build Sprint price raised (Shawn's decision)
+
+- Build Sprint now shows **US$1,200 per person, subject to change** (was US$600). Shawn isn't sure the cost can stay under US$600. The month after is unchanged at US$1,200, so for now both lines show the same price.
