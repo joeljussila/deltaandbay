@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en-GB" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Apply for the Build Sprint | Delta &amp; Bay</title>
+<meta name="description" content="Apply for the Build Sprint in Shenzhen, 11 to 20 January 2027. Five questions, about five minutes.">
+<meta name="theme-color" content="#cbd7f4">
+<link rel="icon" href="../shared/logo/delta-and-bay-monogram.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Delta &amp; Bay">
+<meta property="og:title" content="Build Sprint in Shenzhen | Delta &amp; Bay">
+<meta property="og:description" content="10 intensive days in Shenzhen for hardware and robotics founders, 11 to 20 January 2027.">
+<meta property="og:image" content="https://deltaandbay.com/img/share-1200x630.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="../shared/fonts/montserrat-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/booklet.css">
+<link rel="stylesheet" href="css/sprint.css">
+<script>document.documentElement.className='js';</script>
+<script src="js/turn.js"></script>
+<script src="js/booklet.js" defer></script>
+<script src="js/apply.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="edge">
+  <div class="wrap edge-in">
+    <a class="edge-logo" href="index.html" aria-label="Delta &amp; Bay Founders Club, home"><img src="../shared/logo/delta-and-bay-monogram-prussian-transparent.svg" alt="" width="40" height="39"></a>
+    <nav class="tabs" aria-label="Main">
+      <a class="tab" href="index.html" aria-current="page"><svg class="ico" aria-hidden="true"><use href="icons/sprite.svg#wrench"/></svg><span>Build Sprint</span></a>
+      <a class="tab" href="consultancy.html"><svg class="ico" aria-hidden="true"><use href="icons/sprite.svg#magnifying-glass"/></svg><span>Consultancy</span></a>
+      <a class="tab" href="request.html"><svg class="ico" aria-hidden="true"><use href="icons/sprite.svg#paper-plane-tilt"/></svg><span>Requests</span></a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="wrap spread apply" aria-labelledby="h-apply">
+    <div class="apply-head">
+      <h1 id="h-apply">Apply for the Build Sprint</h1>
+      <p>11 to 20 January 2027 in Shenzhen. Five questions, about five minutes. We reply within 24 hours.</p>
+    </div>
+    <div>
+      <div class="err-summary" id="a-summary" tabindex="-1" hidden><p><svg class="ico" aria-hidden="true"><use href="icons/sprite.svg#x"/></svg>A few things to fix</p><ul></ul></div>
+      <form class="apply-form" id="apply-form" novalidate>
+        <div class="field">
+          <label class="flabel" for="a-name">Your name</label>
+          <input class="inp" id="a-name" name="name" autocomplete="name" required>
+          <p class="err" id="a-name-err" hidden><svg class="ico" aria-hidden="true"><use href="icons/sprite.svg#x"/></svg><span></span></p>
+        </div>
+        <div class="field">
+          <label class="flabel" for="a-email">Email</label>
+          <input class="inp" id="a-email" name="email" type="email" autocomplete="email" inputmode="email" required>
+          <p class="err" id="a-email-err" hidden><svg class="ico" aria-hidden="true"><use href="icons/sprite.svg#x"/></svg><span></span></p>
+        </div>
+        <div class="field">
+          <label class="flabel" for="a-building">What are you building?</label>
+          <p class="help" id="a-building-help">One line. Pre-idea is fine.</p>
+          <input class="inp" id="a-building" name="building" aria-describedby="a-building-help" required>
+          <p class="err" id="a-building-err" hidden><svg class="ico" aria-hidden="true"><use href="icons/sprite.svg#x"/></svg><span></span></p>
+        </div>
+        <div class="field">
+          <label class="flabel" for="a-link">A link, if you have one</label>
+          <p class="help" id="a-link-help">Website, LinkedIn or anything that shows your work. Optional.</p>
+          <input class="inp" id="a-link" name="link" type="url" inputmode="url" aria-describedby="a-link-help">
+        </div>
+        <div class="field">
+          <label class="flabel" for="a-want">What do you want to get made, find or test in Shenzhen?</label>
+          <p class="help" id="a-want-help">The part, a rough quantity and timing if you know them.</p>
+          <textarea class="inp" id="a-want" name="want" aria-describedby="a-want-help" required></textarea>
+          <p class="err" id="a-want-err" hidden><svg class="ico" aria-hidden="true"><use href="icons/sprite.svg#x"/></svg><span></span></p>
+        </div>
+        <fieldset class="field">
+          <legend>Who would pay for your place?</legend>
+          <div class="payers">
+            <label><input type="radio" name="payer" value="Me"> Me</label>
+            <label><input type="radio" name="payer" value="My company"> My company</label>
+            <label><input type="radio" name="payer" value="Not sure yet"> Not sure yet</label>
+          </div>
+          <p class="err" id="a-payer-err" hidden><svg class="ico" aria-hidden="true"><use href="icons/sprite.svg#x"/></svg><span>Choose who would pay.</span></p>
+        </fieldset>
+        <div class="field">
+          <label class="flabel" for="a-more">Anything else we should know?</label>
+          <p class="help" id="a-more-help">Optional.</p>
+          <textarea class="inp" id="a-more" name="more" aria-describedby="a-more-help"></textarea>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn--new" id="a-send" type="submit">Send application<svg class="ico" aria-hidden="true"><use href="icons/sprite.svg#paper-plane-tilt"/></svg></button>
+        </div>
+      </form>
+      <div class="apply-thanks" id="a-thanks" tabindex="-1" hidden>
+        <h2>Thanks, <span id="a-thanks-name"></span>.</h2>
+        <p>Your application is in. We reply within 24 hours, Shenzhen and San Francisco time, with a yes or one question back.</p>
+        <p>Next comes a US$200 deposit link if it’s a fit, then a 20-minute planning call about your part.</p>
+        <p><a href="booking.html">Booking and refunds</a></p>
+      </div>
+      <div class="apply-thanks" id="a-failed" tabindex="-1" hidden>
+        <h2>That didn’t send.</h2>
+        <p>Something went wrong on our side. Send the same answers by WhatsApp or email instead; they’re already filled in.</p>
+        <div class="btn-row">
+          <a class="btn btn--new" id="a-fail-wa" href="https://wa.me/447376975831" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="icons/sprite.svg#whatsapp"/></svg>Send by WhatsApp</a>
+          <a class="btn btn--line" id="a-fail-em" href="mailto:info@deltaandbay.com"><svg class="ico" aria-hidden="true"><use href="icons/sprite.svg#envelope-simple"/></svg>Send by email</a>
+        </div>
+      </div>
+    </div>
+    <aside class="apply-side" aria-labelledby="h-next">
+      <h2 id="h-next">What happens next</h2>
+      <ol>
+        <li>We reply within 24 hours.</li>
+        <li>If it’s a fit, you hold your place with a US$200 deposit, refundable for 14 days.</li>
+        <li>A 20-minute call to plan your part.</li>
+        <li>The US$1,000 balance after we confirm on 14 December.</li>
+      </ol>
+      <p class="help">Rather talk first? <a href="https://calendly.com/syiqing1/new-meeting" target="_blank" rel="noopener">Book a 15-minute call</a>.</p>
+    </aside>
+  </section>
+
+</main>
+
+<footer class="back">
+  <div class="wrap back-in">
+    <img class="back-logo" src="../shared/logo/delta-and-bay-logo-prussian-transparent.svg" alt="Delta &amp; Bay Founders Club" width="208" height="156" loading="lazy">
+    <div>
+      <p class="back-line">Delta &amp; Bay. San Francisco and Shenzhen.</p>
+      <p><a href="mailto:info@deltaandbay.com">info@deltaandbay.com</a></p>
+      <p><a href="https://wa.me/447376975831" target="_blank" rel="noopener">WhatsApp +44 7376 975831</a></p>
+    </div>
+    <div>
+      <p>DELTA &amp; BAY LTD. Registered in England and Wales, company no. 17524691.</p>
+      <p>Registered office: 1 Oxberry Avenue, London SW6 5SP, England.</p>
+      <p><a href="booking.html">Booking and refunds</a> <a href="credits.html">Credits</a> <a href="privacy/">Privacy</a></p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

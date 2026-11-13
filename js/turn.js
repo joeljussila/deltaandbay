@@ -2,7 +2,7 @@
    the booklet is turning (forward to a later tab, back to an earlier one).
    Loaded as a blocking script so the listener exists before the first render. */
 (function () {
-  var order = { 'index.html': 0, 'sprint.html': 1, 'request.html': 2, 'credits.html': 3 };
+  var order = { 'index.html': 0, 'apply.html': 0, 'booking.html': 0, 'consultancy.html': 1, 'request.html': 2, 'credits.html': 3 };
   function pageIndex(url) {
     try {
       var name = new URL(url).pathname.split('/').pop() || 'index.html';
