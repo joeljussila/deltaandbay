@@ -16,9 +16,10 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="../shared/fonts/montserrat-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" as="image" href="img/hero-bay-900.jpg" imagesrcset="img/hero-bay-900.jpg 900w, img/hero-bay-1600.jpg 1600w" imagesizes="(min-width: 960px) 600px, calc(100vw - 36px)" fetchpriority="high">
+<link rel="preload" as="image" href="img/hero-bay-640.jpg" imagesrcset="img/hero-bay-640.jpg 640w, img/hero-bay-1200.jpg 1200w" imagesizes="(min-width: 960px) 600px, calc(100vw - 36px)" fetchpriority="high">
 <link rel="stylesheet" href="css/booklet.css">
 <link rel="stylesheet" href="css/sprint.css">
+<script src="js/show.js" defer></script>
 <script>document.documentElement.className='js';</script>
 <script src="js/turn.js"></script>
 <script src="js/booklet.js" defer></script>
@@ -50,9 +51,20 @@
       </div>
     </div>
     <div class="cover-art">
-      <figure class="callout cover-fig is-new">
-        <figcaption class="callout-tab">Shenzhen Bay at dusk</figcaption>
-        <div class="cover-photo"><img src="img/hero-bay-900.jpg" srcset="img/hero-bay-900.jpg 900w, img/hero-bay-1600.jpg 1600w" sizes="(min-width: 960px) 600px, calc(100vw - 36px)" width="900" height="714" fetchpriority="high" alt="The Shenzhen Bay skyline across the water at dusk."></div>
+      <figure class="callout cover-fig is-new show show--hero" data-show aria-roledescription="carousel" aria-label="Photos of Shenzhen">
+        <figcaption class="callout-tab">Shenzhen</figcaption>
+        <ul class="show-track" tabindex="0" aria-label="Photos of Shenzhen, use the arrows to see more">
+          <li class="show-slide"><div class="show-photo"><img src="img/hero-bay-640.jpg" srcset="img/hero-bay-640.jpg 640w, img/hero-bay-1200.jpg 1200w" sizes="(min-width: 960px) 600px, calc(100vw - 36px)" width="640" height="427" fetchpriority="high" alt="The Shenzhen Bay skyline across the water at dusk."></div></li>
+          <li class="show-slide"><div class="show-photo"><img src="img/gen-street-640.jpg" srcset="img/gen-street-640.jpg 640w, img/gen-street-1200.jpg 1200w" sizes="(min-width: 960px) 600px, calc(100vw - 36px)" width="640" height="427" loading="lazy" alt="Illustration of a delivery robot on a Shenzhen street."></div></li>
+          <li class="show-slide"><div class="show-photo"><img src="img/hero-park-640.jpg" srcset="img/hero-park-640.jpg 640w, img/hero-park-1200.jpg 1200w" sizes="(min-width: 960px) 600px, calc(100vw - 36px)" width="640" height="427" loading="lazy" alt="A park in Shenzhen with the city skyline behind it."></div></li>
+          <li class="show-slide"><div class="show-photo"><img src="img/gen-window-640.jpg" srcset="img/gen-window-640.jpg 640w, img/gen-window-1200.jpg 1200w" sizes="(min-width: 960px) 600px, calc(100vw - 36px)" width="640" height="427" loading="lazy" alt="Illustration of a founder working in an office above the city."></div></li>
+          <li class="show-slide"><div class="show-photo"><img src="img/hero-luohu-640.jpg" srcset="img/hero-luohu-640.jpg 640w, img/hero-luohu-1200.jpg 1200w" sizes="(min-width: 960px) 600px, calc(100vw - 36px)" width="640" height="427" loading="lazy" alt="A busy Shenzhen street with tall buildings."></div></li>
+        </ul>
+        <div class="show-ctrl">
+            <button class="show-btn" type="button" data-dir="-1" aria-label="Previous photo"><svg class="ico" aria-hidden="true"><use href="icons/sprite.svg#arrow-left"/></svg></button>
+            <p class="show-count" aria-live="polite"><span class="show-n">1</span> / 5</p>
+            <button class="show-btn" type="button" data-dir="1" aria-label="Next photo"><svg class="ico" aria-hidden="true"><use href="icons/sprite.svg#arrow-right"/></svg></button>
+          </div>
       </figure>
     </div>
   </section>
@@ -62,33 +74,10 @@
     <h2 class="vh" id="h-facts">The facts</h2>
     <dl class="facts">
       <div class="fact fact--big"><dt>When</dt><dd>11 to 20 January 2027</dd></div>
-      <div class="fact"><dt>Who</dt><dd>20 places for hardware and robotics founders</dd></div>
+      <div class="fact"><dt>Who</dt><dd>40 places. Any stage, as long as you have something to build</dd></div>
       <div class="fact"><dt>Where you stay</dt><dd>Accommodation included, near the coworking space</dd></div>
       <div class="fact"><dt>Price</dt><dd>US$1,200 per person, founding cohort</dd></div>
     </dl>
-  </section>
-
-  <!-- honesty: our first one -->
-  <section class="wrap spread first" aria-labelledby="h-first">
-    <div class="first-text">
-      <h2 class="h2" id="h-first">This is our first one.</h2>
-      <p class="lead">A founding cohort. We’d rather tell you that up front, and show you what’s already real.</p>
-      <ul class="first-list">
-        <li><b>236 founders</b> asked to join our last evening in San Francisco, co-hosted with Mission Robotics.</li>
-        <li><b>33 meetings</b> with Chinese makers in the last month: cameras, robot hands, arms, actuators and factories.</li>
-        <li>We’re in Shenzhen now, setting up the visits for January.</li>
-      </ul>
-    </div>
-    <div class="first-photos">
-      <figure class="callout first-fig">
-        <figcaption class="callout-tab">Our panel at Mission Robotics, 12 Nov</figcaption>
-        <div class="first-photo"><img src="img/panel-room-640.jpg" srcset="img/panel-room-640.jpg 640w, img/panel-room-1200.jpg 1200w" sizes="(min-width: 960px) 520px, calc(100vw - 36px)" width="640" height="427" loading="lazy" alt="A packed room of founders facing a three-person panel on stage at Mission Robotics in San Francisco."></div>
-      </figure>
-      <figure class="callout first-fig first-fig--b">
-        <figcaption class="callout-tab">ROBOTECH, Shenzhen, October</figcaption>
-        <div class="first-photo"><img src="img/sz-expo-640.jpg" srcset="img/sz-expo-640.jpg 640w, img/sz-expo-1200.jpg 1200w" sizes="(min-width: 960px) 420px, calc(100vw - 36px)" width="640" height="427" loading="lazy" alt="A busy robotics trade show hall in Shenzhen with exhibitor booths."></div>
-      </figure>
-    </div>
   </section>
 
   <!-- what's included -->
@@ -102,58 +91,139 @@
         </figure>
         <div class="incl-text">
           <h3>A room and a desk</h3>
-          <p>Accommodation for the 10 nights, and your own desk at a coworking space with the other teams around you.</p>
+          <p>Accommodation for the 9 nights, and a desk at a coworking space you can use all day, every day, with the other teams around you.</p>
         </div>
       </div>
       <ul class="incl-list">
-        <li><svg class="ico" aria-hidden="true"><use href="icons/sprite.svg#handshake"/></svg><div><h3>One-on-ones with suppliers</h3><p>Meetings set up around your part, with someone from our side in the room.</p></div></li>
-        <li><svg class="ico" aria-hidden="true"><use href="icons/sprite.svg#factory"/></svg><div><h3>Factory and showroom visits</h3><p>Two or three factory tours, a robotics demo showroom and a morning in Huaqiangbei.</p></div></li>
-        <li><svg class="ico" aria-hidden="true"><use href="icons/sprite.svg#flag-checkered"/></svg><div><h3>Demo day</h3><p>Show what you built to the cohort and to founders and makers from Shenzhen.</p></div></li>
-        <li><svg class="ico" aria-hidden="true"><use href="icons/sprite.svg#chats"/></svg><div><h3>Two big dinners</h3><p>A welcome dinner on day one and a goodbye dinner on day ten.</p></div></li>
+        <li><svg class="ico" aria-hidden="true"><use href="icons/sprite.svg#handshake"/></svg><div><h3>Supplier contacts</h3><p>We have supplier contacts across cameras, actuators, robot hands, arms and PCBs, and introduce you around your part.</p></div></li>
+        <li><svg class="ico" aria-hidden="true"><use href="icons/sprite.svg#factory"/></svg><div><h3>Optional visits</h3><p>Factory tours, a robotics demo showroom and a morning in Huaqiangbei. Join the ones that help your build.</p></div></li>
+        <li><svg class="ico" aria-hidden="true"><use href="icons/sprite.svg#flag-checkered"/></svg><div><h3>Demo day, Tue 19</h3><p>Show what you built to the cohort and to founders and makers from Shenzhen.</p></div></li>
+        <li><svg class="ico" aria-hidden="true"><use href="icons/sprite.svg#chats"/></svg><div><h3>Two big dinners</h3><p>A welcome dinner on the first night and a goodbye dinner after demo day.</p></div></li>
       </ul>
     </div>
   </section>
 
   <!-- the 10 days -->
   <section class="wrap spread" aria-labelledby="h-days">
-    <div class="sec-head"><h2 class="h2" id="h-days">The 10 days</h2></div>
-    <p class="days-lead">Mostly building. A few outings to the places that make Shenzhen what it is.</p>
-    <div class="days">
-      <div class="days-before">
-        <h3>Before you arrive</h3>
-        <p>A 20-minute planning call to write up your part, so we can line up the right makers. We also send a setup list: eSIM, a VPN, and Alipay or WeChat Pay on your card.</p>
-      </div>
-      <div class="days-block">
-        <h3 class="days-h">Arrive and start</h3>
-        <dl class="day-list">
-          <div><dt>Mon 11</dt><dd>Check in, set up payments and rides. <b>Welcome dinner.</b></dd></div>
-          <div><dt>Tue 12</dt><dd>Kick-off: each team sets one goal. Build. Send off PCBs and 3D prints.</dd></div>
-          <div><dt>Wed 13</dt><dd><b>Huaqiangbei</b> in the morning. Buy what you’re missing, then build.</dd></div>
-        </dl>
-      </div>
-      <div class="days-block days-block--photo">
-        <h3 class="days-h">Visit and build</h3>
-        <dl class="day-list">
-          <div><dt>Thu 14</dt><dd><b>Factory tour</b>, then supplier one-on-ones.</dd></div>
-          <div><dt>Fri 15</dt><dd>Build day. Progress check-in over dinner.</dd></div>
-          <div><dt>Sat 16</dt><dd><b>Robotics demo showroom</b>, then a free afternoon.</dd></div>
-          <div><dt>Sun 17</dt><dd>Rest day. The space stays open.</dd></div>
-          <div><dt>Mon 18</dt><dd><b>Factory tour</b>, then back to your best maker.</dd></div>
-        </dl>
-        <figure class="callout days-fig">
-          <figcaption class="callout-tab">Illustration</figcaption>
-          <div class="days-photo"><img src="img/gen-lab-640.jpg" srcset="img/gen-lab-640.jpg 640w, img/gen-lab-1200.jpg 1200w" sizes="(min-width: 960px) 420px, calc(100vw - 72px)" width="640" height="320" loading="lazy" alt="Illustration of an engineer testing a humanoid robot arm in a lab."></div>
-        </figure>
-      </div>
-      <div class="days-block days-block--last">
-        <h3 class="days-h">Finish and show</h3>
-        <dl class="day-list">
-          <div><dt>Tue 19</dt><dd>Build and prep. Optional third factory tour.</dd></div>
-          <div><dt>Wed 20</dt><dd><b>Demo day</b>, then the <b>goodbye dinner</b>.</dd></div>
-        </dl>
-      </div>
+    <div class="sec-head">
+      <h2 class="h2" id="h-days">The 10 days</h2>
+      <p class="lead">Most of the 10 days are yours. Build, and reach out to suppliers as much as you can: we help with introductions, translation and parts. The outings are optional, and only the two dinners and demo day are fixed.</p>
     </div>
-    <p class="weeks-note">Every day: your desk from morning to late, a short stand-up, and help on hand with suppliers, translation and parts. The plan is a starting point, shaped around what the cohort builds.</p>
+    <div class="days-before days-before--solo">
+      <h3>Before you arrive</h3>
+      <p>Tell us your part and we line up the right makers before you land. We also send a setup list: eSIM, a VPN, and Alipay or WeChat Pay on your card.</p>
+    </div>
+    <ol class="dgrid">
+        <li class="dcard dcard--fixed">
+          <p class="dcard-date">Mon 11</p>
+          <h3>Arrive</h3>
+          <dl>
+            <div><dt>Afternoon</dt><dd>Check in. Help setting up payments, DiDi and maps.</dd></div>
+            <div><dt>18:00</dt><dd>Walk over and see the coworking space.</dd></div>
+            <div><dt>19:30</dt><dd><b class="fixed">Welcome dinner</b></dd></div>
+          </dl>
+        </li>
+        <li class="dcard">
+          <p class="dcard-date">Tue 12</p>
+          <h3>Kick-off</h3>
+          <dl>
+            <div><dt>10:00</dt><dd>Show your part to the group and set one goal.</dd></div>
+            <div><dt>Afternoon</dt><dd>Build. Send off PCB and 3D print orders; most come back in days.</dd></div>
+            <div><dt>Evening</dt><dd>Space open late.</dd></div>
+          </dl>
+        </li>
+        <li class="dcard">
+          <p class="dcard-date">Wed 13</p>
+          <h3>Huaqiangbei</h3>
+          <dl>
+            <div><dt>10:00</dt><dd><span class="opt">Optional</span> Huaqiangbei with someone who knows the stalls.</dd></div>
+            <div><dt>Afternoon</dt><dd>Build with what you bought.</dd></div>
+            <div><dt>Evening</dt><dd>Space open late.</dd></div>
+          </dl>
+        </li>
+        <li class="dcard">
+          <p class="dcard-date">Thu 14</p>
+          <h3>Factory</h3>
+          <dl>
+            <div><dt>09:30</dt><dd><span class="opt">Optional</span> Factory tour, half a day.</dd></div>
+            <div><dt>Afternoon</dt><dd>Supplier meetings you set up with us.</dd></div>
+            <div><dt>Evening</dt><dd>Build.</dd></div>
+          </dl>
+        </li>
+        <li class="dcard">
+          <p class="dcard-date">Fri 15</p>
+          <h3>Build</h3>
+          <dl>
+            <div><dt>All day</dt><dd>Build, plus supplier calls and visits.</dd></div>
+            <div><dt>19:00</dt><dd>Two-minute progress check-in for each team.</dd></div>
+          </dl>
+        </li>
+        <li class="dcard">
+          <p class="dcard-date">Sat 16</p>
+          <h3>Showroom</h3>
+          <dl>
+            <div><dt>10:00</dt><dd><span class="opt">Optional</span> Robotics demo showroom.</dd></div>
+            <div><dt>Afternoon</dt><dd>Free, or keep building.</dd></div>
+          </dl>
+        </li>
+        <li class="dcard dcard--rest">
+          <p class="dcard-date">Sun 17</p>
+          <h3>Rest</h3>
+          <dl>
+            <div><dt>All day</dt><dd>Rest. The space stays open if you want it.</dd></div>
+          </dl>
+        </li>
+        <li class="dcard">
+          <p class="dcard-date">Mon 18</p>
+          <h3>Factory</h3>
+          <dl>
+            <div><dt>09:30</dt><dd><span class="opt">Optional</span> Second factory tour.</dd></div>
+            <div><dt>Afternoon</dt><dd>Go back to your best maker. Order samples.</dd></div>
+            <div><dt>Evening</dt><dd>Demo prep.</dd></div>
+          </dl>
+        </li>
+        <li class="dcard dcard--fixed">
+          <p class="dcard-date">Tue 19</p>
+          <h3>Demo day</h3>
+          <dl>
+            <div><dt>Morning</dt><dd>Final build, or an optional third factory tour.</dd></div>
+            <div><dt>15:00</dt><dd><b class="fixed">Demo day</b> for the cohort and invited guests.</dd></div>
+            <div><dt>19:30</dt><dd><b class="fixed">Goodbye dinner</b></dd></div>
+          </dl>
+        </li>
+        <li class="dcard">
+          <p class="dcard-date">Wed 20</p>
+          <h3>Wrap up</h3>
+          <dl>
+            <div><dt>Morning</dt><dd>Last supplier follow-ups and samples.</dd></div>
+            <div><dt>Afternoon</dt><dd>Agree next steps with each maker. Fly home.</dd></div>
+          </dl>
+        </li>
+    </ol>
+    <p class="weeks-note">Times are a guide. The coworking space is open from morning to late every day.</p>
+    <div class="show show--strip" data-show aria-roledescription="carousel" aria-label="Photos">
+      <ul class="show-track" tabindex="0" aria-label="Photos, use the arrows to see more">
+        <li class="show-slide"><div class="show-photo"><img src="img/gen-workspace-640.jpg" srcset="img/gen-workspace-640.jpg 640w, img/gen-workspace-1200.jpg 1200w" sizes="(min-width: 960px) 520px, calc(100vw - 36px)" width="640" height="427" loading="lazy" alt="Illustration of founders at work in a shared workspace."></div></li>
+        <li class="show-slide"><div class="show-photo"><img src="img/show-market-640.jpg" srcset="img/show-market-640.jpg 640w, img/show-market-1200.jpg 1200w" sizes="(min-width: 960px) 520px, calc(100vw - 36px)" width="640" height="427" loading="lazy" alt="Stalls of components in a Huaqiangbei market corridor."></div></li>
+        <li class="show-slide"><div class="show-photo"><img src="img/gen-workshop-640.jpg" srcset="img/gen-workshop-640.jpg 640w, img/gen-workshop-1200.jpg 1200w" sizes="(min-width: 960px) 520px, calc(100vw - 36px)" width="640" height="427" loading="lazy" alt="Illustration of a maker workshop with 3D printers and tools."></div></li>
+        <li class="show-slide"><div class="show-photo"><img src="img/show-factory-640.jpg" srcset="img/show-factory-640.jpg 640w, img/show-factory-1200.jpg 1200w" sizes="(min-width: 960px) 520px, calc(100vw - 36px)" width="640" height="427" loading="lazy" alt="Rows of CNC machines on a factory floor in Shenzhen."></div></li>
+        <li class="show-slide"><div class="show-photo"><img src="img/show-hands-640.jpg" srcset="img/show-hands-640.jpg 640w, img/show-hands-1200.jpg 1200w" sizes="(min-width: 960px) 520px, calc(100vw - 36px)" width="640" height="427" loading="lazy" alt="Dexterous robot hands on display at a robotics trade show."></div></li>
+        <li class="show-slide"><div class="show-photo"><img src="img/gen-lab32-640.jpg" srcset="img/gen-lab32-640.jpg 640w, img/gen-lab32-1200.jpg 1200w" sizes="(min-width: 960px) 520px, calc(100vw - 36px)" width="640" height="427" loading="lazy" alt="Illustration of an engineer testing a humanoid robot arm."></div></li>
+        <li class="show-slide"><div class="show-photo"><img src="img/show-humanoid-640.jpg" srcset="img/show-humanoid-640.jpg 640w, img/show-humanoid-1200.jpg 1200w" sizes="(min-width: 960px) 520px, calc(100vw - 36px)" width="640" height="427" loading="lazy" alt="A humanoid robot standing in a robotics showroom."></div></li>
+        <li class="show-slide"><div class="show-photo"><img src="img/show-reducers-640.jpg" srcset="img/show-reducers-640.jpg 640w, img/show-reducers-1200.jpg 1200w" sizes="(min-width: 960px) 520px, calc(100vw - 36px)" width="640" height="427" loading="lazy" alt="Robot joint reducers lined up on a display table."></div></li>
+        <li class="show-slide"><div class="show-photo"><img src="img/gen-warehouse-640.jpg" srcset="img/gen-warehouse-640.jpg 640w, img/gen-warehouse-1200.jpg 1200w" sizes="(min-width: 960px) 520px, calc(100vw - 36px)" width="640" height="427" loading="lazy" alt="Illustration of a humanoid robot carrying a box in a warehouse."></div></li>
+        <li class="show-slide"><div class="show-photo"><img src="img/show-booth-640.jpg" srcset="img/show-booth-640.jpg 640w, img/show-booth-1200.jpg 1200w" sizes="(min-width: 960px) 520px, calc(100vw - 36px)" width="640" height="427" loading="lazy" alt="Founders and engineers talking at a supplier booth."></div></li>
+        <li class="show-slide"><div class="show-photo"><img src="img/gen-coffee-640.jpg" srcset="img/gen-coffee-640.jpg 640w, img/gen-coffee-1200.jpg 1200w" sizes="(min-width: 960px) 520px, calc(100vw - 36px)" width="640" height="427" loading="lazy" alt="Illustration of a robot making coffee in a cafe demo."></div></li>
+        <li class="show-slide"><div class="show-photo"><img src="img/show-machined-640.jpg" srcset="img/show-machined-640.jpg 640w, img/show-machined-1200.jpg 1200w" sizes="(min-width: 960px) 520px, calc(100vw - 36px)" width="640" height="427" loading="lazy" alt="A display of precision machined metal parts."></div></li>
+        <li class="show-slide"><div class="show-photo"><img src="img/show-panel-640.jpg" srcset="img/show-panel-640.jpg 640w, img/show-panel-1200.jpg 1200w" sizes="(min-width: 960px) 520px, calc(100vw - 36px)" width="640" height="427" loading="lazy" alt="A packed room of founders facing a panel in San Francisco."></div></li>
+      </ul>
+      <div class="show-ctrl">
+            <button class="show-btn" type="button" data-dir="-1" aria-label="Previous photo"><svg class="ico" aria-hidden="true"><use href="icons/sprite.svg#arrow-left"/></svg></button>
+            <p class="show-count" aria-live="polite"><span class="show-n">1</span> / 13</p>
+            <button class="show-btn" type="button" data-dir="1" aria-label="Next photo"><svg class="ico" aria-hidden="true"><use href="icons/sprite.svg#arrow-right"/></svg></button>
+          </div>
+    </div>
+    <p class="show-note">Real photos from our visits, mixed with illustrations.</p>
   </section>
 
   <!-- price and booking -->
@@ -169,11 +239,10 @@
           <p class="cost-lead">We’re still finalising the programme with our partners in Shenzhen, so some details may be refined. You’ll get the final programme and price in writing before you pay the balance. If anything changes that doesn’t work for you, your deposit comes back in full.</p>
         </div>
         <ul>
-          <li><svg class="ico" aria-hidden="true"><use href="icons/sprite.svg#check"/></svg><span>Accommodation for 10 nights</span></li>
-          <li><svg class="ico" aria-hidden="true"><use href="icons/sprite.svg#check"/></svg><span>A desk at the coworking space</span></li>
-          <li><svg class="ico" aria-hidden="true"><use href="icons/sprite.svg#check"/></svg><span>Supplier one-on-ones, factory tours, the showroom and Huaqiangbei</span></li>
-          <li><svg class="ico" aria-hidden="true"><use href="icons/sprite.svg#check"/></svg><span>Welcome and goodbye dinners, and demo day</span></li>
-          <li><svg class="ico" aria-hidden="true"><use href="icons/sprite.svg#check"/></svg><span>A planning call before you arrive</span></li>
+          <li><svg class="ico" aria-hidden="true"><use href="icons/sprite.svg#check"/></svg><span>Accommodation for 9 nights, 11 to 20 January</span></li>
+          <li><svg class="ico" aria-hidden="true"><use href="icons/sprite.svg#check"/></svg><span>All-day access to the coworking space</span></li>
+          <li><svg class="ico" aria-hidden="true"><use href="icons/sprite.svg#check"/></svg><span>Supplier introductions, plus optional factory tours, the showroom and Huaqiangbei</span></li>
+          <li><svg class="ico" aria-hidden="true"><use href="icons/sprite.svg#check"/></svg><span>Welcome and goodbye dinners, and demo day on Tue 19</span></li>
         </ul>
       </div>
     </div>
@@ -186,7 +255,7 @@
       <li><span class="steps-n" aria-hidden="true">1</span><div><h3>Apply</h3><p>Five questions, about five minutes.</p></div></li>
       <li><span class="steps-n" aria-hidden="true">2</span><div><h3>We reply within 24 hours</h3><p>A yes, or one question back.</p></div></li>
       <li><span class="steps-n" aria-hidden="true">3</span><div><h3>Hold your place with US$200</h3><p>Change your mind within 14 days and we refund it, no questions.</p></div></li>
-      <li><span class="steps-n" aria-hidden="true">4</span><div><h3>Plan your part, then pay the rest</h3><p>A 20-minute call. The US$1,000 balance is due after we confirm on 14 December.</p></div></li>
+      <li><span class="steps-n" aria-hidden="true">4</span><div><h3>Pay the rest after we confirm</h3><p>The sprint runs once 20 places are confirmed. The US$1,000 balance is due after we confirm on 14 December.</p></div></li>
     </ol>
     <p class="steps-link"><a href="booking.html">Booking and refunds, in full<svg class="ico" aria-hidden="true"><use href="icons/sprite.svg#arrow-right"/></svg></a></p>
   </section>
@@ -205,20 +274,22 @@
   <section class="wrap spread" aria-labelledby="h-qa">
     <div class="sec-head"><h2 class="h2" id="h-qa">Questions</h2></div>
     <div class="qa">
+      <details><summary><span>Who can apply?</span><span class="qa-icon" aria-hidden="true"><svg class="ico i-plus"><use href="icons/sprite.svg#plus"/></svg><svg class="ico i-minus"><use href="icons/sprite.svg#minus"/></svg></span></summary>
+        <div class="qa-a"><p>Hardware and robotics founders at any stage, from pre-idea to shipping, as long as you have something to build by January.</p></div></details>
       <details><summary><span>Is this your first sprint?</span><span class="qa-icon" aria-hidden="true"><svg class="ico i-plus"><use href="icons/sprite.svg#plus"/></svg><svg class="ico i-minus"><use href="icons/sprite.svg#minus"/></svg></span></summary>
-        <div class="qa-a"><p>Yes. This is our founding cohort, and we’re keeping it to 20 places so every team gets real time with makers.</p></div></details>
+        <div class="qa-a"><p>Yes. This is our founding cohort: 40 places, and it runs once 20 are confirmed.</p></div></details>
       <details><summary><span>Who else is coming?</span><span class="qa-icon" aria-hidden="true"><svg class="ico i-plus"><use href="icons/sprite.svg#plus"/></svg><svg class="ico i-minus"><use href="icons/sprite.svg#minus"/></svg></span></summary>
         <div class="qa-a"><p>Hardware and robotics founders from San Francisco. Once places are confirmed, we introduce everyone, with permission, before January.</p></div></details>
       <details><summary><span>Which companies will we visit?</span><span class="qa-icon" aria-hidden="true"><svg class="ico i-plus"><use href="icons/sprite.svg#plus"/></svg><svg class="ico i-minus"><use href="icons/sprite.svg#minus"/></svg></span></summary>
         <div class="qa-a"><p>It depends on the parts the cohort is building. We confirm visits in writing once we know your part, and we don’t name a company before it has agreed.</p></div></details>
       <details><summary><span>Where do I stay, and how do I get around?</span><span class="qa-icon" aria-hidden="true"><svg class="ico i-plus"><use href="icons/sprite.svg#plus"/></svg><svg class="ico i-minus"><use href="icons/sprite.svg#minus"/></svg></span></summary>
-        <div class="qa-a"><p>Accommodation is included for the 10 nights, close to the coworking space. Transport isn’t included: rides and the metro are cheap and easy, and we help you set them up on day one.</p></div></details>
+        <div class="qa-a"><p>Accommodation is included for the 9 nights, close to the coworking space. Transport isn’t included: rides and the metro are cheap and easy, and we help you set them up on day one.</p></div></details>
       <details><summary><span>Do I need a visa?</span><span class="qa-icon" aria-hidden="true"><svg class="ico i-plus"><use href="icons/sprite.svg#plus"/></svg><svg class="ico i-minus"><use href="icons/sprite.svg#minus"/></svg></span></summary>
         <div class="qa-a"><p>It depends on your passport. Once you’re accepted, we tell you exactly what you need and when to apply.</p></div></details>
       <details><summary><span>I don’t speak Chinese.</span><span class="qa-icon" aria-hidden="true"><svg class="ico i-plus"><use href="icons/sprite.svg#plus"/></svg><svg class="ico i-minus"><use href="icons/sprite.svg#minus"/></svg></span></summary>
         <div class="qa-a"><p>You don’t need to. Someone from our side is in your supplier meetings.</p></div></details>
       <details><summary><span>Is it okay to buy from China under US rules?</span><span class="qa-icon" aria-hidden="true"><svg class="ico i-plus"><use href="icons/sprite.svg#plus"/></svg><svg class="ico i-minus"><use href="icons/sprite.svg#minus"/></svg></span></summary>
-        <div class="qa-a"><p>For most parts, yes. Whole mobile robots are the main exception. We talk through your part on the planning call.</p></div></details>
+        <div class="qa-a"><p>For most parts, yes. Whole mobile robots are the main exception. We talk it through once we know your part.</p></div></details>
       <details><summary><span>What if I change my mind?</span><span class="qa-icon" aria-hidden="true"><svg class="ico i-plus"><use href="icons/sprite.svg#plus"/></svg><svg class="ico i-minus"><use href="icons/sprite.svg#minus"/></svg></span></summary>
         <div class="qa-a"><p>Within 14 days of paying the deposit, you get it back in full. After that you can give your place to a teammate or another founder at no cost. <a href="booking.html">Booking and refunds</a> has the details.</p></div></details>
       <details><summary><span>Can’t make January?</span><span class="qa-icon" aria-hidden="true"><svg class="ico i-plus"><use href="icons/sprite.svg#plus"/></svg><svg class="ico i-minus"><use href="icons/sprite.svg#minus"/></svg></span></summary>
@@ -233,7 +304,7 @@
         <span class="seat-outline" aria-hidden="true"></span>
         <div class="close-card is-new on-new">
           <h2 id="h-close">10 days. One goal. Shenzhen.</h2>
-          <p>11 to 20 January 2027. 20 places.</p>
+          <p>11 to 20 January 2027. Demo day Tue 19. 40 places.</p>
           <div class="btn-row">
             <a class="btn" href="apply.html">Apply<svg class="ico" aria-hidden="true"><use href="icons/sprite.svg#arrow-right"/></svg></a>
           </div>

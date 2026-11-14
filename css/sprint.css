@@ -149,3 +149,87 @@
   .apply { grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: 64px; align-items: start; padding-top: 56px; }
   .apply-head { grid-column: 1 / -1; }
 }
+
+/* photo slideshow */
+.show-head { display: flex; justify-content: space-between; align-items: end; gap: 16px; margin-bottom: 28px; }
+.show-ctrl { display: flex; align-items: center; gap: 12px; }
+.show-btn { width: 48px; height: 48px; display: grid; place-items: center; border: var(--line) solid var(--ink); background: var(--box); color: var(--ink); cursor: pointer; border-radius: 0; }
+.show-btn:hover { background: #eef2fd; }
+.show-btn:active { transform: translateY(2px); }
+.show-btn:focus-visible { outline: 3px solid var(--new); outline-offset: 2px; }
+.show-btn .ico { width: 20px; height: 20px; }
+.show-count { font-weight: 700; font-variant-numeric: tabular-nums; min-width: 3.2em; text-align: center; color: var(--ink-2); }
+.show-track { display: grid; grid-auto-flow: column; grid-auto-columns: 86%; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding-bottom: 4px; overscroll-behavior-x: contain; }
+.show-track::-webkit-scrollbar { display: none; }
+.show-track:focus-visible { outline: 3px solid var(--new); outline-offset: 4px; }
+.show-slide { scroll-snap-align: start; }
+.show-slide figure { margin: 0; display: grid; gap: 10px; }
+.show-photo { aspect-ratio: 3 / 2; overflow: hidden; border: var(--line) solid var(--ink); background: var(--page-deep); }
+.show-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.show-slide figcaption { font-size: 14.5px; font-weight: 650; color: var(--ink-2); }
+.show-note { margin-top: 18px; font-size: 14.5px; color: var(--ink-2); font-weight: 500; }
+@media (min-width: 960px) { .show-track { grid-auto-columns: calc((100% - 32px) / 2.4); gap: 16px; } }
+@media (max-width: 639.98px) { .show-ctrl .show-count { display: none; } .show-btn { width: 44px; height: 44px; } }
+
+/* the 10 days as day cards */
+.days-before--solo { border: var(--line) solid var(--ink); border-bottom: 0; }
+@media (min-width: 960px) { .days-before--solo { grid-template-columns: minmax(0, 3fr) minmax(0, 9fr); column-gap: 40px; align-items: baseline; padding: 26px 32px; } }
+.dgrid { display: grid; grid-template-columns: minmax(0, 1fr); border: var(--line) solid var(--ink); background: var(--box); }
+.dcard { padding: 20px 18px 22px; display: grid; gap: 6px; align-content: start; border-top: var(--line) solid var(--ink); }
+.dcard:first-child { border-top: 0; }
+.dcard-date { font-size: 13.5px; font-weight: 750; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.dcard h3 { font-size: 20px; letter-spacing: -0.015em; line-height: 1.2; }
+.dcard dl { display: grid; gap: 8px; margin-top: 6px; }
+.dcard dl > div { display: grid; grid-template-columns: 74px minmax(0, 1fr); gap: 8px; }
+.dcard dt { font-size: 13.5px; font-weight: 700; color: var(--ink-3); padding-top: 2px; font-variant-numeric: tabular-nums; }
+.dcard dd { font-size: 15px; font-weight: 500; color: var(--ink-2); line-height: 1.45; }
+.dcard .fixed { color: var(--new); font-weight: 750; }
+.dcard .opt { display: inline-block; font-size: 11.5px; font-weight: 750; letter-spacing: 0.02em; color: var(--ink-2); border: 1.5px solid var(--ink-3); padding: 0 6px; margin-right: 2px; line-height: 1.5; vertical-align: 1px; }
+.dcard--rest { background: var(--page); }
+.dcard--fixed h3 { color: var(--new); }
+@media (min-width: 640px) {
+  .dgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .dcard:nth-child(2) { border-top: 0; }
+  .dcard:nth-child(even) { border-left: var(--line) solid var(--ink); }
+}
+@media (min-width: 1100px) {
+  .dgrid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .dcard { padding: 22px 18px 24px; border-top: 0; border-left: var(--line) solid var(--ink); }
+  .dcard:nth-child(5n + 1) { border-left: 0; }
+  .dcard:nth-child(n + 6) { border-top: var(--line) solid var(--ink); }
+  .dcard dl > div { grid-template-columns: minmax(0, 1fr); gap: 1px; }
+}
+
+/* slideshow inside "What the 10 days include" */
+.incl-show { display: grid; gap: 14px; min-width: 0; }
+.incl-show .show-track { grid-auto-columns: 100%; gap: 12px; }
+.incl-show .show-photo { aspect-ratio: 3 / 2; }
+.incl-show .show-slide figcaption { font-size: 13px; font-weight: 650; color: var(--ink-3); }
+.incl-show .show-ctrl { justify-content: flex-start; }
+.incl-show .show-count { display: block; }
+.incl-list li, .incl-list li > div { align-content: start; }
+
+/* hero and strip slideshows */
+.show--hero .show-track, .show--strip .show-track { display: grid; grid-auto-flow: column; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; }
+.show--hero .show-track { grid-auto-columns: 100%; gap: 0; }
+.show--hero .show-photo { aspect-ratio: 1.26; border: 0; }
+.show--hero .show-ctrl { margin-top: 14px; }
+.show--strip { margin-top: 48px; display: grid; gap: 14px; }
+.show--strip .show-track { grid-auto-columns: 86%; gap: 16px; }
+@media (min-width: 960px) { .show--strip .show-track { grid-auto-columns: calc((100% - 32px) / 3); } }
+.show-slide { scroll-snap-align: start; list-style: none; }
+.show-ctrl { display: flex; align-items: center; gap: 12px; }
+.show-count { display: block; }
+.apply-photo, .book-photo { aspect-ratio: 3 / 2; overflow: hidden; }
+.apply-photo img, .book-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.apply-fig { margin: 24px 0 12px; }
+.book-fig { margin-top: 36px; max-width: 900px; }
+@media (min-width: 960px) {
+  .book-hero { grid-template-columns: minmax(0, 6fr) minmax(0, 6fr); column-gap: 64px; align-items: center; }
+  .book-hero h1, .book-hero p { grid-column: 1; }
+  .book-fig { grid-column: 2; grid-row: 1 / span 2; margin-top: 30px; }
+}
+@media (min-width: 960px) {
+  .book-hero h1 { align-self: end; }
+  .book-hero p { align-self: start; }
+}
