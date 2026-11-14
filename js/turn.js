@@ -5,7 +5,7 @@
   var order = { 'index.html': 0, 'apply.html': 0, 'booking.html': 0, 'consultancy.html': 1, 'request.html': 2, 'credits.html': 3 };
   function pageIndex(url) {
     try {
-      var name = new URL(url).pathname.split('/').pop() || 'index.html';
+      var name = (new URL(url).pathname.split('/').pop() || 'index').replace(/\.html$/, '') + '.html';
       return name in order ? order[name] : 0;
     } catch (e) {
       return 0;

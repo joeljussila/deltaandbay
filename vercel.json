@@ -1,12 +1,35 @@
 {
+  "cleanUrls": true,
   "redirects": [
-    { "source": "/3d-night", "destination": "/", "permanent": false },
-    { "source": "/3d-night/", "destination": "/", "permanent": false },
-    { "source": "/apply", "destination": "/", "permanent": false },
-    { "source": "/apply/", "destination": "/", "permanent": false },
-    { "source": "/shenzhen", "destination": "/", "permanent": false },
-    { "source": "/shenzhen/", "destination": "/", "permanent": false },
-    { "source": "/holding", "destination": "/", "permanent": false },
-    { "source": "/holding/", "destination": "/", "permanent": false }
+    {
+      "source": "/3d-night",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/3d-night/",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/shenzhen",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/shenzhen/",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/holding",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/holding/",
+      "destination": "/",
+      "permanent": false
+    }
   ]
 }
