@@ -233,3 +233,4 @@
   .book-hero h1 { align-self: end; }
   .book-hero p { align-self: start; }
 }
+.thanks-call { display: grid; gap: 12px; padding-top: 16px; border-top: 1px dashed var(--ghost); }
