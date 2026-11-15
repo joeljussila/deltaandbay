@@ -74,7 +74,7 @@
 /* booking steps */
 .costs--one { max-width: 960px; }
 @media (min-width: 960px) {
-  .costs--one .cost { grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); column-gap: 48px; padding: 32px 36px 34px; }
+  .costs--one .cost { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); column-gap: 48px; padding: 32px 36px 34px; }
   .costs--one .cost-meta { grid-column: 2; grid-row: 1; }
   .costs--one .cost ul { grid-column: 2; }
 }
@@ -253,6 +253,10 @@ html:lang(zh) {
   --font: "Montserrat", "Montserrat Fallback", "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Microsoft YaHei", sans-serif;
 }
 html:lang(zh) body * { letter-spacing: 0 !important; }
+/* big Latin numbers and labels keep their tight tracking */
+html:lang(zh) .cost-price, html:lang(zh) .steps-n { letter-spacing: -0.04em !important; }
+html:lang(zh) .route { letter-spacing: -0.035em !important; }
+html:lang(zh) .cost-price small { letter-spacing: 0 !important; }
 html:lang(zh) h1, html:lang(zh) h2 { line-height: 1.25 !important; }
 html:lang(zh) body { line-height: 1.7; }
 html:lang(zh) .cover h1 { max-width: 12em; }
