@@ -15,6 +15,7 @@
   if (!form) return;
 
   function $(id) { return document.getElementById(id); }
+  function t(s) { return window.DB_I18N ? window.DB_I18N.t(s) : s; }
   function all(sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); }
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -66,7 +67,7 @@
   /* ---- the message ---- */
   function needList() {
     return needs.filter(function (n) { return n.checked; }).map(function (n) {
-      var label = n.getAttribute('data-label');
+      var label = n.getAttribute('data-label');  // already in the page language
       if (n.value === 'other' && val(f.other)) label += ' (' + val(f.other) + ')';
       return label;
     }).join(', ');
@@ -75,25 +76,27 @@
     var p = payers.filter(function (r) { return r.checked; })[0];
     return p ? p.value : '';
   }
+  function payerShown() { return t(payer()); }
   function message() {
     var rows = [
-      ['What I’m working on', val(f.building)],
-      ['What I need', needList()],
-      ['More', val(f.more)],
-      ['When', val(f.when)],
-      ['Who would pay', payer()],
-      ['Name', val(f.name)],
-      ['Email', val(f.email)],
-      ['WhatsApp', val(f.whatsapp)]
+      [t('What I’m working on'), val(f.building)],
+      [t('What I need'), needList()],
+      [t('More'), val(f.more)],
+      [t('When'), val(f.when)],
+      [t('Who would pay'), payerShown()],
+      [t('Name'), val(f.name)],
+      [t('Email'), val(f.email)],
+      [t('WhatsApp'), val(f.whatsapp)]
     ];
-    var lines = ['Hi Shawn, here’s my request.', ''];
-    rows.forEach(function (r) { if (r[1]) lines.push(r[0] + ': ' + r[1]); });
-    lines.push('', 'Sent from the Delta & Bay website');
+    var lines = [t('Hi Shawn, here’s my request.'), ''];
+    var sep = window.DB_I18N && window.DB_I18N.lang() === 'zh' ? '：' : ': ';
+    rows.forEach(function (r) { if (r[1]) lines.push(r[0] + sep + r[1]); });
+    lines.push('', t('Sent from the Delta & Bay website'));
     return lines.join('\n');
   }
   function subject() {
     var n = needList();
-    return 'Request from ' + val(f.name) + (n ? ': ' + n : '');
+    return t('Request from') + ' ' + val(f.name) + (n ? ': ' + n : '');
   }
 
   /* ---- checks: inline, label above, error below ---- */
@@ -188,7 +191,7 @@
       case 'need': return needList();
       case 'more': return val(f.more).replace(/\s+/g, ' ');
       case 'when': return val(f.when);
-      case 'payer': return payer();
+      case 'payer': return payerShown();
       case 'name': return val(f.name);
       case 'reach': return [val(f.email), val(f.whatsapp)].filter(Boolean).join(', ');
     }
@@ -321,7 +324,7 @@
     if (lastMessage === savedMessage) { showThanks('form'); return; }
     var label = sendForm.querySelector('span');
     sendForm.setAttribute('aria-busy', 'true');
-    label.textContent = 'Sending';
+    label.textContent = t('Sending');
     seatAll(false);
     save('form').then(function () {
       savedMessage = lastMessage;
@@ -330,7 +333,7 @@
       sendErr.hidden = false;
     }).then(function () {
       sendForm.removeAttribute('aria-busy');
-      label.textContent = 'Send request';
+      label.textContent = t('Send request');
     });
   });
   sendEm.addEventListener('click', function (e) { onSend('email', e); });
@@ -345,7 +348,7 @@
   });
   $('copy-req').addEventListener('click', function () {
     var text = lastMessage || message();
-    function done() { $('copied').textContent = 'Copied'; }
+    function done() { $('copied').textContent = t('Copied'); }
     function fallback() {
       var ta = document.createElement('textarea');
       ta.value = text;
@@ -360,6 +363,8 @@
     if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, fallback);
     else fallback();
   });
+
+  document.addEventListener('langchange', function () { seatAll(false); });
 
   /* ---- start ---- */
   prefill();

@@ -234,3 +234,27 @@
   .book-hero p { align-self: start; }
 }
 .thanks-call { display: grid; gap: 12px; padding-top: 16px; border-top: 1px dashed var(--ghost); }
+
+/* ---------------------------------------------------------- 中文 / English */
+.lang-switch {
+  align-self: center; margin-left: 12px; min-width: 52px; min-height: 40px; padding: 0 12px;
+  border: var(--line) solid var(--ink); border-radius: 0; background: var(--box); color: var(--ink);
+  font: 700 14px/1 var(--font); letter-spacing: 0; cursor: pointer;
+  transition: background-color 160ms ease;
+}
+.lang-switch:hover { background: #d3ddf7; }
+.lang-switch:lang(zh) { font-family: var(--zh); font-weight: 600; }
+@media (min-width: 960px) {
+  .tabs { margin-left: auto; }
+  .lang-switch { margin-left: 16px; }
+}
+/* Chinese: Montserrat for Latin and numbers, a Chinese system font for the rest */
+html:lang(zh) {
+  --font: "Montserrat", "Montserrat Fallback", "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+}
+html:lang(zh) body * { letter-spacing: 0 !important; }
+html:lang(zh) h1, html:lang(zh) h2 { line-height: 1.25 !important; }
+html:lang(zh) body { line-height: 1.7; }
+html:lang(zh) .cover h1 { max-width: 12em; }
+html:lang(zh) .req-hero h1 { max-width: 12em; }
+html:lang(zh) .fact--big dd { font-size: clamp(20px, 1.9vw, 24px); }

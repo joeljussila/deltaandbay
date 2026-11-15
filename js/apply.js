@@ -13,6 +13,7 @@
   var form = document.getElementById('apply-form');
   if (!form) return;
   function $(id) { return document.getElementById(id); }
+  function t(s) { return window.DB_I18N ? window.DB_I18N.t(s) : s; }
   function val(el) { return el ? el.value.trim() : ''; }
   var f = { name: $('a-name'), email: $('a-email'), building: $('a-building'), link: $('a-link'), want: $('a-want'), more: $('a-more') };
   var send = $('a-send'), summary = $('a-summary'), thanks = $('a-thanks'), failed = $('a-failed');
@@ -29,19 +30,19 @@
   function check() {
     var problems = [];
     var rules = [
-      [f.name, 'Add your name.'],
-      [f.email, 'Add an email we can reply to.'],
-      [f.building, 'Tell us what you’re building, in a line.'],
-      [f.want, 'Tell us what you want from Shenzhen.']
+      [f.name, t('Add your name.')],
+      [f.email, t('Add an email we can reply to.')],
+      [f.building, t('Tell us what you’re building, in a line.')],
+      [f.want, t('Tell us what you want from Shenzhen.')]
     ];
     rules.forEach(function (r) {
       var bad = !val(r[0]);
-      if (r[0] === f.email && !bad && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val(f.email))) { bad = true; r[1] = 'That email doesn’t look complete.'; }
+      if (r[0] === f.email && !bad && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val(f.email))) { bad = true; r[1] = t('That email doesn’t look complete.'); }
       setErr(r[0], bad ? r[1] : '');
       if (bad) problems.push([r[0], r[1]]);
     });
     var pErr = $('a-payer-err');
-    if (!payer()) { pErr.hidden = false; problems.push([form.querySelector('input[name="payer"]'), 'Choose who would pay.']); }
+    if (!payer()) { pErr.hidden = false; problems.push([form.querySelector('input[name="payer"]'), t('Choose who would pay.')]); }
     else pErr.hidden = true;
     return problems;
   }
@@ -99,9 +100,13 @@
         $('a-thanks-name').textContent = d.name.split(' ')[0];
         form.hidden = true; thanks.hidden = false; thanks.focus();
       } else {
-        var msg = 'Build Sprint application\nName: ' + d.name + '\nEmail: ' + d.email + '\nBuilding: ' + d.building + '\nLink: ' + d.link + '\nFrom Shenzhen: ' + d.want + '\nWho pays: ' + d.payer + '\nAnything else: ' + d.more;
+        var c = window.DB_I18N && window.DB_I18N.lang() === 'zh' ? '：' : ': ';
+        var msg = [t('Build Sprint application'),
+          t('Name') + c + d.name, t('Email') + c + d.email, t('Building') + c + d.building,
+          t('Link') + c + d.link, t('From Shenzhen') + c + d.want, t('Who pays') + c + t(d.payer),
+          t('Anything else') + c + d.more].join('\n');
         $('a-fail-wa').href = 'https://wa.me/447376975831?text=' + encodeURIComponent(msg);
-        $('a-fail-em').href = 'mailto:info@deltaandbay.com?subject=' + encodeURIComponent('Build Sprint application') + '&body=' + encodeURIComponent(msg);
+        $('a-fail-em').href = 'mailto:info@deltaandbay.com?subject=' + encodeURIComponent(t('Build Sprint application')) + '&body=' + encodeURIComponent(msg);
         failed.hidden = false; failed.focus();
       }
     });
