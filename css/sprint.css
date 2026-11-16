@@ -301,28 +301,30 @@ html:lang(zh) .sponsors { display: none; }
 .cover-get-list li { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 600; line-height: 1.35; color: var(--ink); }
 .cover-get-list .ico { flex: none; width: 18px; height: 18px; color: var(--new); }
 
-/* venue: the text and address left, three pictures of the space right */
-.venue { display: grid; gap: 36px; }
-.venue-text { display: grid; gap: 16px; align-content: start; }
-.venue-lead { font-size: 18px; font-weight: 650; line-height: 1.45; color: var(--ink); max-width: 46ch; }
-.venue-text > p:not(.venue-lead) { color: var(--ink-2); font-weight: 500; max-width: 52ch; }
-.venue-facts { display: grid; margin-top: 8px; border: var(--line) solid var(--ink); background: var(--box); }
-.venue-facts > div { display: grid; gap: 4px; padding: 16px 18px 18px; }
+/* venue (English only): compact. Text and address on top, three pictures in a row
+   (a swipe row on phones). It sits after the 10 days. */
+.spread.venue-section { padding-top: 24px; padding-bottom: 48px; }
+.venue-section .sec-head { margin-bottom: 22px; }
+.venue { display: grid; gap: 20px; }
+.venue-text { display: grid; gap: 10px; align-content: start; }
+.venue-lead { font-size: 17px; font-weight: 650; line-height: 1.45; color: var(--ink); max-width: 56ch; }
+.venue-text > p:not(.venue-lead) { font-size: 15px; line-height: 1.55; color: var(--ink-2); font-weight: 500; max-width: 62ch; }
+.venue-facts { display: grid; border: var(--line) solid var(--ink); background: var(--box); align-self: start; }
+.venue-facts > div { display: grid; gap: 3px; padding: 12px 16px 14px; }
 .venue-facts > div + div { border-top: var(--line) solid var(--ink); }
-.venue-facts dt { font-size: 13.5px; font-weight: 700; color: var(--ink-2); }
-.venue-facts dd { font-size: 16px; font-weight: 650; line-height: 1.4; }
-.venue-photos { display: grid; gap: 0; align-content: start; min-width: 0; }
-.venue-photos .venue-fig { margin-top: 30px; }
-.venue-photos > .venue-fig:first-child { margin-top: 30px; }
-.venue-row { display: grid; gap: 0 16px; }
+.venue-facts dt { font-size: 13px; font-weight: 700; color: var(--ink-2); }
+.venue-facts dd { font-size: 15px; font-weight: 650; line-height: 1.4; }
+.venue-pics { display: grid; grid-auto-flow: column; grid-auto-columns: 82%; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; margin-top: 12px; padding-bottom: 4px; }
+.venue-pics::-webkit-scrollbar { display: none; }
+.venue-pics:focus-visible { outline: 3px solid var(--new); outline-offset: 4px; }
+.venue-pics .venue-fig { margin: 30px 0 0; scroll-snap-align: start; }
 .venue-photo { aspect-ratio: 16 / 9; overflow: hidden; }
 .venue-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.venue-photos .show-note { margin-top: 18px; }
-@media (min-width: 640px) { .venue-row { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.venue-section .show-note { margin-top: 14px; }
 @media (min-width: 960px) {
-  .venue { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 64px; align-items: start; }
-  .venue-photos .venue-fig { margin-top: 30px; }
-  .venue-lead { font-size: 19.5px; }
+  .spread.venue-section { padding-bottom: 64px; }
+  .venue { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 48px; }
+  .venue-pics { grid-auto-columns: minmax(0, 1fr); overflow: visible; gap: 20px; }
 }
 /* venue: English only for now, like the sponsors strip */
 html:lang(zh) .venue-section { display: none; }
