@@ -275,6 +275,7 @@ html:lang(zh) .fact--big dd { font-size: clamp(20px, 1.9vw, 24px); }
 .sp-virdyn { height: 40px; }
 .sp-orbbec { height: 19px; }
 .sp-linkerbot { height: 27px; }
+.sp-jianqiao { height: 40px; }
 @media (prefers-reduced-motion: no-preference) {
   .sponsors-track { animation: sponsors-scroll 32s linear infinite; }
   .sponsors-view:hover .sponsors-track { animation-play-state: paused; }
