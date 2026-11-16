@@ -288,3 +288,11 @@ html:lang(zh) .fact--big dd { font-size: clamp(20px, 1.9vw, 24px); }
   .sponsors-view { -webkit-mask-image: none; mask-image: none; }
 }
 html:lang(zh) .sponsors { display: none; }
+
+/* hero: what you get, under the buttons */
+.cover-get { margin-top: 12px; display: grid; gap: 10px; }
+.cover-get-h { font-size: 13.5px; font-weight: 700; color: var(--ink-2); }
+.cover-get-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.cover-get-list li { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 600; line-height: 1.35; color: var(--ink); }
+.cover-get-list .ico { flex: none; width: 18px; height: 18px; color: var(--new); }
+@media (min-width: 960px) { .cover-get-list { grid-template-columns: repeat(2, max-content); column-gap: 32px; } }
