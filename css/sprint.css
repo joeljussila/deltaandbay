@@ -274,7 +274,6 @@ html:lang(zh) .fact--big dd { font-size: clamp(20px, 1.9vw, 24px); }
 .sp-skyworth { height: 22px; }
 .sp-virdyn { height: 40px; }
 .sp-orbbec { height: 19px; }
-.sp-digit { height: 32px; }
 .sp-linkerbot { height: 27px; }
 @media (prefers-reduced-motion: no-preference) {
   .sponsors-track { animation: sponsors-scroll 32s linear infinite; }
