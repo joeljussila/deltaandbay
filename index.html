@@ -20,6 +20,7 @@
 <link rel="stylesheet" href="css/booklet.css">
 <link rel="stylesheet" href="css/sprint.css">
 <script src="js/show.js" defer></script>
+<script src="js/days.js" defer></script>
 <script>document.documentElement.className='js';</script>
 <script src="js/i18n-zh.js"></script>
 <script src="js/i18n.js"></script>
@@ -137,10 +138,10 @@
         </div>
       </div>
       <ul class="incl-list">
-        <li><svg class="ico" aria-hidden="true"><use href="icons/sprite.svg#handshake"/></svg><div><h3>Supplier contacts</h3><p>We have supplier contacts across cameras, actuators, robot hands, arms and PCBs, and introduce you around your part.</p></div></li>
-        <li><svg class="ico" aria-hidden="true"><use href="icons/sprite.svg#factory"/></svg><div><h3>Optional visits</h3><p>Factory tours, a robotics demo showroom and a morning in Huaqiangbei. Join the ones that help your build.</p></div></li>
+        <li><svg class="ico" aria-hidden="true"><use href="icons/sprite.svg#handshake"/></svg><div><h3>Supplier contacts</h3><p>We have supplier contacts across cameras, actuators, robot hands, arms and PCBs, and introduce you around your part. On supplier day, Sat 16, we book one-on-ones for you.</p></div></li>
+        <li><svg class="ico" aria-hidden="true"><use href="icons/sprite.svg#factory"/></svg><div><h3>Optional visits</h3><p>Factories in Bao’an and Longgang, a day at XbotPark in Songshan Lake and a morning in Huaqiangbei. Join the ones that help your build.</p></div></li>
         <li><svg class="ico" aria-hidden="true"><use href="icons/sprite.svg#flag-checkered"/></svg><div><h3>Demo day, Tue 19</h3><p>Show what you built to the cohort and to founders and makers from Shenzhen.</p></div></li>
-        <li><svg class="ico" aria-hidden="true"><use href="icons/sprite.svg#chats"/></svg><div><h3>Two big dinners</h3><p>A welcome dinner on the first night and a goodbye dinner after demo day.</p></div></li>
+        <li><svg class="ico" aria-hidden="true"><use href="icons/sprite.svg#chats"/></svg><div><h3>Two big dinners</h3><p>A welcome dinner with a guest talk on Tue 12, and a goodbye dinner after demo day.</p></div></li>
       </ul>
     </div>
   </section>
@@ -149,100 +150,271 @@
   <section class="wrap spread" aria-labelledby="h-days">
     <div class="sec-head">
       <h2 class="h2" id="h-days">The 10 days</h2>
-      <p class="lead">Most of the 10 days are yours. Build, and reach out to suppliers as much as you can: we help with introductions, translation and parts. The outings are optional, and only the two dinners and demo day are fixed.</p>
+      <p class="lead">Most of the 10 days are yours. Build, and reach out to suppliers as much as you can: we help with introductions, translation and parts. Visits and talks are optional, so skip any that don’t help your build. Only four things are fixed: the welcome dinner, the supplier meetings, demo day and the goodbye dinner.</p>
+      <p class="dgrid-hint">Hover over a day, or tap it, for the full plan.</p>
     </div>
     <div class="days-before days-before--solo">
       <h3>Before you arrive</h3>
       <p>Tell us your part and we line up the right makers before you land. We also send a setup list: eSIM, a VPN, and Alipay or WeChat Pay on your card.</p>
     </div>
     <ol class="dgrid">
-        <li class="dcard dcard--fixed">
+        <li class="dcard" data-day>
           <p class="dcard-date">Mon 11</p>
           <h3>Arrive</h3>
           <dl>
-            <div><dt>Afternoon</dt><dd>Check in. Help setting up payments, DiDi and maps.</dd></div>
-            <div><dt>18:00</dt><dd>Walk over and see SCI, where you’ll build.</dd></div>
-            <div><dt>19:30</dt><dd><b class="fixed">Welcome dinner</b></dd></div>
+            <div><dt>Afternoon</dt><dd>Check in. We help you set up payments, DiDi and&nbsp;maps.</dd></div>
+            <div><dt>17:00</dt><dd>See SCI, where you’ll&nbsp;build.</dd></div>
+            <div><dt>17:30</dt><dd><span class="opt">Optional</span> Talk: how to brief a Shenzhen&nbsp;supplier.</dd></div>
+            <div><dt>Evening</dt><dd>Dinner nearby, or&nbsp;rest.</dd></div>
           </dl>
+          <button class="dcard-more" type="button" aria-expanded="false" aria-controls="day-11">See the full day</button>
+          <div class="dpop" id="day-11" role="region" aria-label="Mon 11, Arrive">
+            <p class="dpop-date">Mon 11</p>
+            <p class="dpop-title">Arrive</p>
+            <ol class="dpop-list">
+              <li><span class="dpop-t">13:00</span><p>Arrive in batches and check in. We help set up Alipay or WeChat Pay, DiDi and maps, and leave time for jet&nbsp;lag.</p></li>
+              <li><span class="dpop-t">16:00</span><p>Free. If you land late, go straight to the hotel; no need to&nbsp;rush.</p></li>
+              <li><span class="dpop-t">17:00</span><p>Tour of the coworking space at SCI. Pick up tools and learn how the space&nbsp;works.</p></li>
+              <li><span class="dpop-t">17:30</span><p><span class="opt">Optional</span> Talk: your first time finding a supplier in Shenzhen, and how to explain what you&nbsp;need.</p></li>
+              <li><span class="dpop-t">18:15</span><p>Dinner on your own. We share a list of places nearby; join a table if you&nbsp;like.</p></li>
+              <li><span class="dpop-t">19:30</span><p>Free, rest, or use the&nbsp;space.</p></li>
+            </ol>
+            <p class="dpop-focus"><b>Focus</b> Settle in. We note the one problem each team most needs solved.</p>
+            <p class="dpop-hours">About 3.5 hours free.</p>
+          </div>
         </li>
-        <li class="dcard">
+        <li class="dcard dcard--fixed" data-day>
           <p class="dcard-date">Tue 12</p>
-          <h3>Kick-off</h3>
+          <h3>Kick-off and welcome&nbsp;dinner</h3>
           <dl>
-            <div><dt>10:00</dt><dd>Show your part to the group and set one goal.</dd></div>
-            <div><dt>Afternoon</dt><dd>Build. Send off PCB and 3D print orders; most come back in days.</dd></div>
-            <div><dt>Evening</dt><dd>Space open late.</dd></div>
+            <div><dt>09:30</dt><dd>Kick-off. Meet the teams and say what you&nbsp;need.</dd></div>
+            <div><dt>13:00</dt><dd>Build. Send off sample orders&nbsp;early.</dd></div>
+            <div><dt>16:00</dt><dd><span class="opt">Optional</span> Talk: design it so it’s easy to&nbsp;make.</dd></div>
+            <div><dt>18:30</dt><dd><span class="opt opt--fixed">Fixed</span> Welcome dinner, with a guest&nbsp;talk.</dd></div>
           </dl>
+          <button class="dcard-more" type="button" aria-expanded="false" aria-controls="day-12">See the full day</button>
+          <div class="dpop" id="day-12" role="region" aria-label="Tue 12, Kick-off and welcome dinner">
+            <p class="dpop-date">Tue 12</p>
+            <p class="dpop-title">Kick-off and welcome dinner</p>
+            <ol class="dpop-list">
+              <li><span class="dpop-t">09:30</span><p>Kick-off: how the 10 days run, who to call, and how to sign up for&nbsp;outings.</p></li>
+              <li><span class="dpop-t">10:00</span><p>Team intros, then groups by need: your goal, the parts you need and the makers you want to&nbsp;meet.</p></li>
+              <li><span class="dpop-t">12:00</span><p>Lunch.</p></li>
+              <li><span class="dpop-t">13:00</span><p>Build, 3 hours. Finish your spec and parts list, check lead times and send sample orders&nbsp;early.</p></li>
+              <li><span class="dpop-t">16:00</span><p><span class="opt">Optional</span> Talk: how to make your first design easier to machine and&nbsp;assemble.</p></li>
+              <li><span class="dpop-t">16:45</span><p>Free. Rest at the hotel or get ready for&nbsp;dinner.</p></li>
+              <li><span class="dpop-t">18:30</span><p><span class="opt opt--fixed">Fixed</span> Welcome dinner. At 19:00 a guest talk on using Shenzhen’s supply chain from abroad, then questions, then dinner with the&nbsp;cohort.</p></li>
+              <li><span class="dpop-t">20:30</span><p>Free.</p></li>
+            </ol>
+            <p class="dpop-focus"><b>Focus</b> Each team leaves with a one-page brief and a goal for the 10 days.</p>
+            <p class="dpop-hours">3 hours building, about 3 hours free.</p>
+          </div>
         </li>
-        <li class="dcard">
+        <li class="dcard" data-day>
           <p class="dcard-date">Wed 13</p>
           <h3>Huaqiangbei</h3>
           <dl>
-            <div><dt>10:00</dt><dd><span class="opt">Optional</span> Huaqiangbei with someone who knows the stalls.</dd></div>
-            <div><dt>Afternoon</dt><dd>Build with what you bought.</dd></div>
-            <div><dt>Evening</dt><dd>Space open late.</dd></div>
+            <div><dt>09:00</dt><dd><span class="opt">Optional</span> Half a day in Huaqiangbei with a guide who knows the&nbsp;stalls.</dd></div>
+            <div><dt>14:00</dt><dd>Build with what you bought, 4&nbsp;hours.</dd></div>
+            <div><dt>Evening</dt><dd>Free. The space stays&nbsp;open.</dd></div>
           </dl>
+          <button class="dcard-more" type="button" aria-expanded="false" aria-controls="day-13">See the full day</button>
+          <div class="dpop" id="day-13" role="region" aria-label="Wed 13, Huaqiangbei">
+            <p class="dpop-date">Wed 13</p>
+            <p class="dpop-title">Huaqiangbei</p>
+            <ol class="dpop-list">
+              <li><span class="dpop-t">09:00</span><p>Meet and leave together, in groups by what you’re buying: sensors, electronics modules,&nbsp;connectors.</p></li>
+              <li><span class="dpop-t">10:00</span><p><span class="opt">Optional</span> Huaqiangbei with a guide who knows the market. Look for samples, parts in stock and&nbsp;alternatives.</p></li>
+              <li><span class="dpop-t">12:30</span><p>Lunch and back to&nbsp;SCI.</p></li>
+              <li><span class="dpop-t">14:00</span><p>Build, 4 hours. Test what you bought, update your parts list and chase&nbsp;samples.</p></li>
+              <li><span class="dpop-t">18:00</span><p>Dinner on your&nbsp;own.</p></li>
+              <li><span class="dpop-t">19:30</span><p>Free, or keep building. No talk&nbsp;tonight.</p></li>
+            </ol>
+            <p class="dpop-focus"><b>Focus</b> Note part numbers, specs, prices, contacts and alternatives. Need an exact part? Send us the list before.</p>
+            <p class="dpop-hours">4 hours building, 2.5 hours free.</p>
+          </div>
         </li>
-        <li class="dcard">
+        <li class="dcard dcard--trip" data-day>
           <p class="dcard-date">Thu 14</p>
-          <h3>Factory</h3>
+          <h3>Factories in&nbsp;Bao’an</h3>
           <dl>
-            <div><dt>09:30</dt><dd><span class="opt">Optional</span> Factory tour, half a day.</dd></div>
-            <div><dt>Afternoon</dt><dd>Supplier meetings you set up with us.</dd></div>
-            <div><dt>Evening</dt><dd>Build.</dd></div>
+            <div><dt>08:30</dt><dd><span class="opt">Optional</span> All-day trip to three factories in&nbsp;Bao’an.</dd></div>
+            <div><dt>Morning</dt><dd>PCB and electronics assembly, then machined&nbsp;parts.</dd></div>
+            <div><dt>Afternoon</dt><dd>Assembly and testing, with time for quotes and&nbsp;samples.</dd></div>
+            <div><dt>Evening</dt><dd>Free.</dd></div>
           </dl>
+          <button class="dcard-more" type="button" aria-expanded="false" aria-controls="day-14">See the full day</button>
+          <div class="dpop" id="day-14" role="region" aria-label="Thu 14, Factories in Bao’an">
+            <p class="dpop-date">Thu 14</p>
+            <p class="dpop-title">Factories in Bao’an</p>
+            <ol class="dpop-list">
+              <li><span class="dpop-t">08:30</span><p><span class="opt">Optional</span> Meet and leave for Bao’an. On the way: what to check on process, minimum order and lead&nbsp;time.</p></li>
+              <li><span class="dpop-t">09:30</span><p>Factory 1: PCB or electronics assembly. See the line and go through your needs with an&nbsp;engineer.</p></li>
+              <li><span class="dpop-t">11:00</span><p>Factory 2, one hour: structural parts or quick&nbsp;prototypes.</p></li>
+              <li><span class="dpop-t">12:30</span><p>Lunch.</p></li>
+              <li><span class="dpop-t">14:00</span><p>Factory 3: assembly or testing. Two hours, plus 30 minutes for quotes and&nbsp;samples.</p></li>
+              <li><span class="dpop-t">16:30</span><p>Back to&nbsp;base.</p></li>
+              <li><span class="dpop-t">18:00</span><p>Dinner on your&nbsp;own.</p></li>
+              <li><span class="dpop-t">19:30</span><p>Free.</p></li>
+            </ol>
+            <p class="dpop-focus"><b>Focus</b> Pick the makers worth following up, with their terms and the next step.</p>
+            <p class="dpop-hours">2.5 hours free. Rather build? Stay at SCI.</p>
+          </div>
         </li>
-        <li class="dcard">
+        <li class="dcard dcard--trip" data-day>
           <p class="dcard-date">Fri 15</p>
-          <h3>Build</h3>
+          <h3>XbotPark</h3>
           <dl>
-            <div><dt>All day</dt><dd>Build, plus supplier calls and visits.</dd></div>
-            <div><dt>19:00</dt><dd>Two-minute progress check-in for each team.</dd></div>
+            <div><dt>08:30</dt><dd><span class="opt">Optional</span> All-day trip to XbotPark, the robotics park in Songshan Lake,&nbsp;Dongguan.</dd></div>
+            <div><dt>10:00</dt><dd>Tour and demos from startups built&nbsp;there.</dd></div>
+            <div><dt>13:30</dt><dd>Meet startups, then office hours with engineers and&nbsp;mentors.</dd></div>
+            <div><dt>Evening</dt><dd>Free.</dd></div>
           </dl>
+          <button class="dcard-more" type="button" aria-expanded="false" aria-controls="day-15">See the full day</button>
+          <div class="dpop" id="day-15" role="region" aria-label="Fri 15, XbotPark">
+            <p class="dpop-date">Fri 15</p>
+            <p class="dpop-title">XbotPark</p>
+            <ol class="dpop-list">
+              <li><span class="dpop-t">08:30</span><p><span class="opt">Optional</span> Leave for Songshan Lake, Dongguan, about 90 minutes&nbsp;away.</p></li>
+              <li><span class="dpop-t">10:00</span><p>Tour and product demos: how startups there got from prototype to&nbsp;production.</p></li>
+              <li><span class="dpop-t">12:15</span><p>Lunch and a&nbsp;break.</p></li>
+              <li><span class="dpop-t">13:30</span><p>Meet 2 or 3 startups matched to your project. Talk parts and product&nbsp;development.</p></li>
+              <li><span class="dpop-t">15:15</span><p>Office hours with engineers or founder mentors. Bring drawings and specific&nbsp;questions.</p></li>
+              <li><span class="dpop-t">16:30</span><p>Head back. Dinner on your&nbsp;own.</p></li>
+              <li><span class="dpop-t">19:30</span><p>Free.</p></li>
+            </ol>
+            <p class="dpop-focus"><b>Focus</b> Leave with changes to your design and people to follow up with.</p>
+            <p class="dpop-hours">2.5 hours free. The day’s agenda is being booked with the park.</p>
+          </div>
         </li>
-        <li class="dcard">
+        <li class="dcard dcard--fixed" data-day>
           <p class="dcard-date">Sat 16</p>
-          <h3>Showroom</h3>
+          <h3>Supplier&nbsp;day</h3>
           <dl>
-            <div><dt>10:00</dt><dd><span class="opt">Optional</span> Robotics demo showroom.</dd></div>
-            <div><dt>Afternoon</dt><dd>Free, or keep building.</dd></div>
+            <div><dt>10:00</dt><dd>Supplier expo: makers bring parts you can&nbsp;try.</dd></div>
+            <div><dt>13:00</dt><dd><span class="opt opt--fixed">Fixed</span> One-on-one supplier meetings, booked around your&nbsp;part.</dd></div>
+            <div><dt>16:00</dt><dd>Second meetings and engineer&nbsp;questions.</dd></div>
+            <div><dt>Evening</dt><dd>Free.</dd></div>
           </dl>
+          <button class="dcard-more" type="button" aria-expanded="false" aria-controls="day-16">See the full day</button>
+          <div class="dpop" id="day-16" role="region" aria-label="Sat 16, Supplier day">
+            <p class="dpop-date">Sat 16</p>
+            <p class="dpop-title">Supplier day</p>
+            <ol class="dpop-list">
+              <li><span class="dpop-t">09:30</span><p>Sign in. Get the list of makers and your one-on-one&nbsp;schedule.</p></li>
+              <li><span class="dpop-t">10:00</span><p>Expo. Try products across four areas: PCB, CNC, 3D printing and small batches; motors, actuators, drives and batteries; cameras, IMUs, touch sensors and data rigs; arms, grippers, hands and&nbsp;robots.</p></li>
+              <li><span class="dpop-t">12:00</span><p>Lunch.</p></li>
+              <li><span class="dpop-t">13:00</span><p><span class="opt opt--fixed">Fixed</span> One-on-one supplier meetings: five rounds of 25 minutes, booked for&nbsp;you.</p></li>
+              <li><span class="dpop-t">15:30</span><p>Break. Sort your&nbsp;notes.</p></li>
+              <li><span class="dpop-t">16:00</span><p>Walk the booths, second meetings, engineer&nbsp;questions.</p></li>
+              <li><span class="dpop-t">17:30</span><p>Hand in your shortlist. Dinner on your&nbsp;own.</p></li>
+              <li><span class="dpop-t">19:30</span><p>Free.</p></li>
+            </ol>
+            <p class="dpop-focus"><b>Focus</b> 3 to 5 good meetings per team, each with samples to test, price terms and a named contact. No need to buy anything on the day.</p>
+            <p class="dpop-hours">2.5 hours free.</p>
+          </div>
         </li>
-        <li class="dcard dcard--rest">
+        <li class="dcard dcard--rest" data-day>
           <p class="dcard-date">Sun 17</p>
           <h3>Rest</h3>
           <dl>
-            <div><dt>All day</dt><dd>Rest. The space stays open if you want it.</dd></div>
+            <div><dt>All day</dt><dd>Rest, see the city, or build. The space stays&nbsp;open.</dd></div>
+            <div><dt>17:00</dt><dd><span class="opt">Optional</span> Talk: lessons from a first small production&nbsp;run.</dd></div>
           </dl>
+          <button class="dcard-more" type="button" aria-expanded="false" aria-controls="day-17">See the full day</button>
+          <div class="dpop" id="day-17" role="region" aria-label="Sun 17, Rest">
+            <p class="dpop-date">Sun 17</p>
+            <p class="dpop-title">Rest</p>
+            <ol class="dpop-list">
+              <li><span class="dpop-t">09:00</span><p>Free: rest, see the city, or&nbsp;build.</p></li>
+              <li><span class="dpop-t">12:30</span><p>Lunch on your&nbsp;own.</p></li>
+              <li><span class="dpop-t">13:30</span><p>Free: rest, build, or meet suppliers&nbsp;yourself.</p></li>
+              <li><span class="dpop-t">17:00</span><p><span class="opt">Optional</span> Talk: a hardware founder on what went wrong in their first small production&nbsp;run.</p></li>
+              <li><span class="dpop-t">17:45</span><p>Dinner on your&nbsp;own.</p></li>
+              <li><span class="dpop-t">19:30</span><p>Free. The space stays&nbsp;open.</p></li>
+            </ol>
+            <p class="dpop-focus"><b>Focus</b> Nothing is due. You have 7 daytime hours to build if you want them.</p>
+            <p class="dpop-hours">About 9.5 hours free.</p>
+          </div>
         </li>
-        <li class="dcard">
+        <li class="dcard dcard--trip" data-day>
           <p class="dcard-date">Mon 18</p>
-          <h3>Factory</h3>
+          <h3>Factories in&nbsp;Longgang</h3>
           <dl>
-            <div><dt>09:30</dt><dd><span class="opt">Optional</span> Second factory tour.</dd></div>
-            <div><dt>Afternoon</dt><dd>Go back to your best maker. Order samples.</dd></div>
-            <div><dt>Evening</dt><dd>Demo prep.</dd></div>
+            <div><dt>08:30</dt><dd><span class="opt">Optional</span> All-day trip to three factories in&nbsp;Longgang.</dd></div>
+            <div><dt>Morning</dt><dd>Motors, actuators and drives, then sensors or robot&nbsp;parts.</dd></div>
+            <div><dt>Afternoon</dt><dd>A robot maker or integrator: assembly and&nbsp;testing.</dd></div>
+            <div><dt>Evening</dt><dd>Free, or prep your&nbsp;demo.</dd></div>
           </dl>
+          <button class="dcard-more" type="button" aria-expanded="false" aria-controls="day-18">See the full day</button>
+          <div class="dpop" id="day-18" role="region" aria-label="Mon 18, Factories in Longgang">
+            <p class="dpop-date">Mon 18</p>
+            <p class="dpop-title">Factories in Longgang</p>
+            <ol class="dpop-list">
+              <li><span class="dpop-t">08:30</span><p><span class="opt">Optional</span> Meet and leave for Longgang. Visits are matched to your&nbsp;team.</p></li>
+              <li><span class="dpop-t">09:30</span><p>Factory 1: motors, actuators or drives. Check performance, interfaces and custom&nbsp;options.</p></li>
+              <li><span class="dpop-t">11:00</span><p>Factory 2, one hour: sensors or robot&nbsp;parts.</p></li>
+              <li><span class="dpop-t">12:30</span><p>Lunch.</p></li>
+              <li><span class="dpop-t">14:00</span><p>Factory 3: a robot maker or integrator. See assembly and testing, and talk&nbsp;engineering.</p></li>
+              <li><span class="dpop-t">16:30</span><p>Back to&nbsp;base.</p></li>
+              <li><span class="dpop-t">18:00</span><p>Dinner on your&nbsp;own.</p></li>
+              <li><span class="dpop-t">19:30</span><p>Free, or prep your&nbsp;demo.</p></li>
+            </ol>
+            <p class="dpop-focus"><b>Focus</b> A path to samples or a small batch. Anything ordered today won’t arrive in time for demo day.</p>
+            <p class="dpop-hours">2.5 hours free.</p>
+          </div>
         </li>
-        <li class="dcard dcard--fixed">
+        <li class="dcard dcard--fixed" data-day>
           <p class="dcard-date">Tue 19</p>
-          <h3>Demo day</h3>
+          <h3>Demo day and goodbye&nbsp;dinner</h3>
           <dl>
-            <div><dt>Morning</dt><dd>Final build, or an optional third factory tour.</dd></div>
-            <div><dt>15:00</dt><dd><b class="fixed">Demo day</b> for the cohort and invited guests.</dd></div>
-            <div><dt>19:30</dt><dd><b class="fixed">Goodbye dinner</b></dd></div>
+            <div><dt>09:00</dt><dd>Final build and&nbsp;debugging.</dd></div>
+            <div><dt>15:00</dt><dd><span class="opt opt--fixed">Fixed</span> Demo day: 5 minutes to demo, 3 for&nbsp;questions.</dd></div>
+            <div><dt>19:00</dt><dd><span class="opt opt--fixed">Fixed</span> Goodbye dinner with local founders and&nbsp;makers.</dd></div>
           </dl>
+          <button class="dcard-more" type="button" aria-expanded="false" aria-controls="day-19">See the full day</button>
+          <div class="dpop" id="day-19" role="region" aria-label="Tue 19, Demo day and goodbye dinner">
+            <p class="dpop-date">Tue 19</p>
+            <p class="dpop-title">Demo day and goodbye dinner</p>
+            <ol class="dpop-list">
+              <li><span class="dpop-t">09:00</span><p>Final build and debugging, 3.5 hours. Prepare your demo and a backup&nbsp;video.</p></li>
+              <li><span class="dpop-t">12:30</span><p>Lunch.</p></li>
+              <li><span class="dpop-t">13:30</span><p><span class="opt">Optional</span> Talk: from a working prototype to a product you can&nbsp;ship.</p></li>
+              <li><span class="dpop-t">14:15</span><p>Set up, kit check, guests&nbsp;arrive.</p></li>
+              <li><span class="dpop-t">15:00</span><p><span class="opt opt--fixed">Fixed</span> Demo day. Each team demos for 5 minutes and takes 3 minutes of questions, then open tables. With more than 12 teams, demos move to&nbsp;tables.</p></li>
+              <li><span class="dpop-t">17:30</span><p>Free.</p></li>
+              <li><span class="dpop-t">19:00</span><p><span class="opt opt--fixed">Fixed</span> Goodbye dinner with local founders and the makers we worked&nbsp;with.</p></li>
+              <li><span class="dpop-t">21:00</span><p>Free.</p></li>
+            </ol>
+            <p class="dpop-focus"><b>Focus</b> Show what runs, what testing taught you and what’s next.</p>
+            <p class="dpop-hours">3.5 hours building, 2.5 hours free.</p>
+          </div>
         </li>
-        <li class="dcard">
+        <li class="dcard" data-day>
           <p class="dcard-date">Wed 20</p>
-          <h3>Wrap up</h3>
+          <h3>Wrap up and fly&nbsp;home</h3>
           <dl>
-            <div><dt>Morning</dt><dd>Last supplier follow-ups and samples.</dd></div>
-            <div><dt>Afternoon</dt><dd>Agree next steps with each maker. Fly home.</dd></div>
+            <div><dt>09:00</dt><dd><span class="opt">Optional</span> Talk: following up samples from&nbsp;home.</dd></div>
+            <div><dt>09:45</dt><dd>Last supplier follow-ups. Pick up&nbsp;samples.</dd></div>
+            <div><dt>15:00</dt><dd>Fly&nbsp;home.</dd></div>
           </dl>
+          <button class="dcard-more" type="button" aria-expanded="false" aria-controls="day-20">See the full day</button>
+          <div class="dpop" id="day-20" role="region" aria-label="Wed 20, Wrap up and fly home">
+            <p class="dpop-date">Wed 20</p>
+            <p class="dpop-title">Wrap up and fly home</p>
+            <ol class="dpop-list">
+              <li><span class="dpop-t">09:00</span><p><span class="opt">Optional</span> Talk: how to follow up samples and checks once you’ve left&nbsp;Shenzhen.</p></li>
+              <li><span class="dpop-t">09:45</span><p>Last round of supplier follow-ups. Pick up samples and confirm&nbsp;deliveries.</p></li>
+              <li><span class="dpop-t">12:30</span><p>Lunch.</p></li>
+              <li><span class="dpop-t">13:30</span><p>Pack, check out, ship samples&nbsp;home.</p></li>
+              <li><span class="dpop-t">15:00</span><p>Leave in batches. Early flights leave&nbsp;earlier.</p></li>
+            </ol>
+            <p class="dpop-focus"><b>Focus</b> Leave with a list of makers, samples, lead times, contacts and the date of your next call. We help you follow up.</p>
+            <p class="dpop-hours">1.5 hours to pack.</p>
+          </div>
         </li>
     </ol>
-    <p class="weeks-note">Times are a guide. The space at SCI is open from morning to late every day.</p>
+    <p class="weeks-note">Times are a guide, in Shenzhen time. Venues, makers and speakers are planned and still being confirmed. The space at SCI is open from 09:00 to 22:00 every day.</p>
     <div class="show show--strip" data-show aria-roledescription="carousel" aria-label="Photos">
       <ul class="show-track" tabindex="0" aria-label="Photos, use the arrows to see more">
         <li class="show-slide"><div class="show-photo"><img src="img/gen-workspace-640.jpg" srcset="img/gen-workspace-640.jpg 640w, img/gen-workspace-1200.jpg 1200w" sizes="(min-width: 960px) 520px, calc(100vw - 36px)" width="640" height="427" loading="lazy" alt="Illustration of founders at work in a shared workspace."></div></li>
@@ -314,7 +486,7 @@
         <ul>
           <li><svg class="ico" aria-hidden="true"><use href="icons/sprite.svg#check"/></svg><span>Accommodation for 9 nights, 11 to 20 January</span></li>
           <li><svg class="ico" aria-hidden="true"><use href="icons/sprite.svg#check"/></svg><span>All-day access to the coworking space at SCI</span></li>
-          <li><svg class="ico" aria-hidden="true"><use href="icons/sprite.svg#check"/></svg><span>Supplier introductions, plus optional factory tours, the showroom and Huaqiangbei</span></li>
+          <li><svg class="ico" aria-hidden="true"><use href="icons/sprite.svg#check"/></svg><span>Supplier introductions and supplier day, plus optional factory tours, XbotPark and Huaqiangbei</span></li>
           <li><svg class="ico" aria-hidden="true"><use href="icons/sprite.svg#check"/></svg><span>Welcome and goodbye dinners, and demo day on Tue 19</span></li>
         </ul>
       </div>

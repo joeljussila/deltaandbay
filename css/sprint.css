@@ -171,34 +171,89 @@
 @media (min-width: 960px) { .show-track { grid-auto-columns: calc((100% - 32px) / 2.4); gap: 16px; } }
 @media (max-width: 639.98px) { .show-ctrl .show-count { display: none; } .show-btn { width: 44px; height: 44px; } }
 
-/* the 10 days as day cards */
+/* the 10 days as day cards; the full day opens over the card on hover, focus or tap */
 .days-before--solo { border: var(--line) solid var(--ink); border-bottom: 0; }
 @media (min-width: 960px) { .days-before--solo { grid-template-columns: minmax(0, 3fr) minmax(0, 9fr); column-gap: 40px; align-items: baseline; padding: 26px 32px; } }
+.dgrid-hint { margin-top: 12px; font-size: 15px; font-weight: 700; color: var(--new); }
 .dgrid { display: grid; grid-template-columns: minmax(0, 1fr); border: var(--line) solid var(--ink); background: var(--box); }
-.dcard { padding: 20px 18px 22px; display: grid; gap: 6px; align-content: start; border-top: var(--line) solid var(--ink); }
+.dcard { position: relative; padding: 15px 14px 12px; display: flex; flex-direction: column; gap: 6px; border-top: var(--line) solid var(--ink); cursor: pointer; transition: background-color 160ms ease; }
 .dcard:first-child { border-top: 0; }
-.dcard-date { font-size: 13.5px; font-weight: 750; color: var(--ink-2); font-variant-numeric: tabular-nums; }
-.dcard h3 { font-size: 20px; letter-spacing: -0.015em; line-height: 1.2; }
-.dcard dl { display: grid; gap: 8px; margin-top: 6px; }
+.dcard-date { font-size: 12px; font-weight: 750; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.dcard h3 { font-size: 16.5px; letter-spacing: -0.012em; line-height: 1.2; text-wrap: balance; }
+.dcard dl { display: grid; gap: 5px; margin-top: 4px; }
 .dcard dl > div { display: grid; grid-template-columns: 74px minmax(0, 1fr); gap: 8px; }
-.dcard dt { font-size: 13.5px; font-weight: 700; color: var(--ink-3); padding-top: 2px; font-variant-numeric: tabular-nums; }
-.dcard dd { font-size: 15px; font-weight: 500; color: var(--ink-2); line-height: 1.45; }
-.dcard .fixed { color: var(--new); font-weight: 750; }
-.dcard .opt { display: inline-block; font-size: 11.5px; font-weight: 750; letter-spacing: 0.02em; color: var(--ink-2); border: 1.5px solid var(--ink-3); padding: 0 6px; margin-right: 2px; line-height: 1.5; vertical-align: 1px; }
+.dcard dt { font-size: 11.5px; font-weight: 700; color: var(--ink-3); padding-top: 2px; font-variant-numeric: tabular-nums; }
+.dcard dd { font-size: 13px; font-weight: 500; color: var(--ink-2); line-height: 1.38; text-wrap: pretty; }
+.dcard .opt, .dpop .opt { display: inline-block; font-size: 10px; font-weight: 750; letter-spacing: 0.02em; color: var(--ink-2); border: 1.5px solid var(--ink-3); padding: 0 6px; margin-right: 2px; line-height: 1.5; vertical-align: 1px; }
+.dcard .opt--fixed, .dpop .opt--fixed { color: var(--box); background: var(--new); border-color: var(--new); }
 .dcard--rest { background: var(--page); }
 .dcard--fixed h3 { color: var(--new); }
+.dcard-more {
+  margin-top: auto; align-self: stretch; display: flex; align-items: center; gap: 8px;
+  padding: 8px 0 0; border: 0; border-top: 1px dashed var(--ghost); background: none;
+  font: 700 12.5px/1.2 var(--font); color: var(--new); text-align: left; cursor: pointer;
+}
+.dcard-more::after { content: ""; width: 7px; height: 7px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(-45deg); margin-left: 2px; transition: transform 160ms ease; }
+.dcard dl + .dcard-more { margin-top: auto; }
+.dcard > dl { margin-bottom: 10px; }
+
+.dpop { display: none; }
+.dpop-date { font-size: 13.5px; font-weight: 750; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.dpop-title { font-size: 21px; font-weight: 750; letter-spacing: -0.015em; line-height: 1.2; color: var(--ink); margin: 2px 0 10px; }
+.dcard--fixed .dpop-title { color: var(--new); }
+.dpop-list { display: grid; }
+.dpop-list li { display: grid; grid-template-columns: 50px minmax(0, 1fr); gap: 10px; padding: 8px 0; border-top: 1px dashed var(--ghost); list-style: none; }
+.dpop-t { font-size: 13.5px; font-weight: 750; color: var(--ink-3); font-variant-numeric: tabular-nums; padding-top: 1px; }
+.dpop-list p { font-size: 14px; font-weight: 500; color: var(--ink-2); line-height: 1.42; text-wrap: pretty; }
+.dpop-focus { margin-top: 12px; padding: 12px 14px; background: var(--page); font-size: 14.5px; font-weight: 550; color: var(--ink); line-height: 1.45; }
+.dpop-focus b { display: block; font-size: 12px; font-weight: 750; letter-spacing: 0.06em; text-transform: uppercase; color: var(--new); margin-bottom: 2px; }
+.dpop-hours { margin-top: 10px; font-size: 13.5px; font-weight: 650; color: var(--ink-3); }
+
+/* phones: the full day opens in place, under the card */
+.dcard.is-open .dpop { display: block; margin-top: 14px; }
+@media (max-width: 639.98px) { .dpop-date, .dpop-title { display: none; } }
+.dcard.is-open .dcard-more::after { transform: rotate(45deg); }
+
 @media (min-width: 640px) {
   .dgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .dcard:nth-child(2) { border-top: 0; }
   .dcard:nth-child(even) { border-left: var(--line) solid var(--ink); }
+  /* tablets and up: a bigger window over the card */
+  .dpop {
+    display: block; position: absolute; z-index: 30; top: -14px; left: -14px;
+    width: min(500px, calc(100vw - 2 * var(--gutter))); padding: 22px 24px 20px;
+    background: var(--box); border: var(--line) solid var(--ink);
+    box-shadow: 10px 10px 0 rgba(5, 10, 48, 0.16), 0 24px 48px rgba(5, 10, 48, 0.18);
+    opacity: 0; visibility: hidden; transform: scale(0.96); transform-origin: 0 0;
+    transition: opacity 140ms ease, transform 180ms cubic-bezier(0.2, 0.8, 0.2, 1), visibility 0s linear 180ms;
+    cursor: auto;
+  }
+  .dcard:nth-child(even) .dpop { left: auto; right: -14px; transform-origin: 100% 0; }
+  .dcard.is-open .dpop,
+  .dcard:has(.dcard-more:focus-visible) .dpop {
+    margin-top: 0; opacity: 1; visibility: visible; transform: none;
+    transition: opacity 160ms ease 80ms, transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1) 80ms, visibility 0s linear 80ms;
+  }
+  .dcard.is-open .dcard-more::after { transform: rotate(-45deg); }
+}
+@media (min-width: 640px) and (hover: hover) {
+  .dcard:hover { background: #eef2fd; z-index: 2; }
+  .dcard--rest:hover { background: #d3ddf7; }
+  .dcard:hover .dpop {
+    opacity: 1; visibility: visible; transform: none;
+    transition: opacity 160ms ease 120ms, transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1) 120ms, visibility 0s linear 120ms;
+  }
 }
 @media (min-width: 1100px) {
   .dgrid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
-  .dcard { padding: 22px 18px 24px; border-top: 0; border-left: var(--line) solid var(--ink); }
+  .dcard { padding: 16px 14px 12px; border-top: 0; border-left: var(--line) solid var(--ink); }
   .dcard:nth-child(5n + 1) { border-left: 0; }
   .dcard:nth-child(n + 6) { border-top: var(--line) solid var(--ink); }
   .dcard dl > div { grid-template-columns: minmax(0, 1fr); gap: 1px; }
+  .dcard:nth-child(even) .dpop { left: -14px; right: auto; transform-origin: 0 0; }
+  .dcard:nth-child(5n + 4) .dpop, .dcard:nth-child(5n) .dpop { left: auto; right: -14px; transform-origin: 100% 0; }
 }
+@media (prefers-reduced-motion: reduce) { .dpop { transition: none !important; } }
 
 /* slideshow inside "What the 10 days include" */
 .incl-show { display: grid; gap: 14px; min-width: 0; }
