@@ -464,6 +464,10 @@ button { font: inherit; color: inherit; }
 .cost-name { font-size: 18px; line-height: 1.25; letter-spacing: -0.01em; }
 .cost-price { font-size: clamp(40px, 4.6vw, 64px); font-weight: 800; letter-spacing: -0.04em; line-height: 0.95; font-variant-numeric: tabular-nums; }
 .cost-price small { display: block; margin-top: 10px; font-size: 15px; font-weight: 650; letter-spacing: 0; line-height: 1.3; color: var(--ink-2); }
+.cost-alt { font-size: clamp(20px, 2vw, 26px); font-weight: 750; letter-spacing: -0.02em; line-height: 1.2; margin-top: 10px; }
+.cost-was { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; opacity: 0.45; margin-top: -2px; }
+.cost-was s { font-size: clamp(20px, 2vw, 26px); font-weight: 750; letter-spacing: -0.02em; text-decoration-thickness: 2px; }
+.cost-was span { font-size: 14px; font-weight: 650; }
 .cost-meta { display: grid; gap: 10px; align-content: start; }
 .cost-when { font-size: 15px; font-weight: 650; color: var(--ink); }
 .cost ul { display: grid; gap: 10px; align-content: start; }

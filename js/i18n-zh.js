@@ -603,5 +603,22 @@ window.DB_ZH = {
 "Breakfast, packing, check-out and the trip to the airport, all around your flight. No group meeting.": "按航班安排早餐、行李整理、退房及送站；无需统一集合。",
 "Bag storage, sample pickup and help shipping samples, if you need it.": "主办方提供行李寄存、样品领取及寄送协助；按需要使用。",
 "Leave in batches. On a late flight? Free time, and the space if SCI allows.": "分批返程；晚班航班团队自由活动，按场地安排使用办公空间。",
-"No talks, visits or group work.": "不安排讲座、统一参访或集体工作任务。"
+"No talks, visits or group work.": "不安排讲座、统一参访或集体工作任务。",
+"Near SCI, included at US$1,900. Or stay elsewhere for US$1,600": "住在 SCI 附近，含在 US$1,900 里。也可以自己安排住宿，价格 US$1,600",
+"US$1,900 with accommodation, US$1,600 without": "含住宿 US$1,900，不含住宿 US$1,600",
+"Regular price": "正常价格",
+"US$1,900": "US$1,900",
+"per person, with accommodation": "每人，含住宿",
+"US$1,600 without accommodation": "不含住宿 US$1,600",
+"Early bird, sold out": "早鸟价，已售完",
+"The early bird price is sold out. It still applies if you booked a call or chatted with us before 23 November.": "早鸟价已售完。如果你在 11月23日前约过电话或和我们聊过，仍然按早鸟价。",
+"Times and visits on the day plan may move a little; the dates, the price you book at and what’s included won’t. If we ever change those, everything you’ve paid comes back.": "每日安排里的时间和参访可能会小幅调整，但日期、你报名时的价格和包含内容不会变。万一这些有变动，你付的钱全额退还。",
+"Accommodation for 9 nights, 11 to 20 January (in the US$1,900 price)": "9 晚住宿，1月11日至20日（含在 US$1,900 里）",
+"Pay the balance by Tue 22 Dec": "12月22日（周二）前付清尾款",
+"US$1,700 with accommodation or US$1,400 without. The sprint runs if 20 people have paid deposits by 15 December. If it doesn’t, your deposit comes back.": "含住宿 US$1,700，不含住宿 US$1,400。12月15日前有 20 人付了订金，就正式开营；如果没开营，订金全额退还。",
+"With the US$1,900 price, accommodation is included for the 9 nights, close to SCI. With the US$1,600 price, you arrange your own. Transport isn’t included: rides and the metro are cheap and easy, and we help you set them up on day one.": "选 US$1,900 的话，包 9 晚住宿，离 SCI 很近；选 US$1,600 的话，住宿自己安排。交通不包：打车和地铁都便宜又方便，第一天我们就帮你弄好。",
+"The balance (US$1,700 with accommodation, US$1,400 without) is due by Tue 22 Dec. The sprint runs if 20 people have paid deposits by 15 December.": "尾款（含住宿 US$1,700，不含住宿 US$1,400）需在 12月22日（周二）前付清。12月15日前有 20 人付了订金，就正式开营。",
+"US$1,700 with accommodation or US$1,400 without, due Tue 22 Dec": "含住宿 US$1,700，不含住宿 US$1,400，12月22日（周二）前付清",
+"Accommodation for 9 nights (in the US$1,900 price), all-day access to the coworking space at SCI, supplier introductions and the supplier expo on Tue 12, optional factory tours, XbotPark, Huaqiangbei and talks, welcome and goodbye dinners, demo day on Tue 19": "9 晚住宿（含在 US$1,900 里）、联合办公空间全天使用、供应商对接和1月12日（周二）的供应商产品展、可选的工厂参观、XbotPark、华强北和讲座、欢迎晚宴和告别晚宴、1月19日（周二）的 Demo Day",
+"we don’t sell flights or local transport. You book your own flight to Shenzhen; accommodation for the 9 nights is included in the US$1,900 price.": "我们不卖机票，也不提供当地交通。飞深圳的机票请自己订；9 晚住宿含在 US$1,900 的价格里。"
 };
