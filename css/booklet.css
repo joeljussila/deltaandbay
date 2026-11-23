@@ -166,6 +166,9 @@ button { font: inherit; color: inherit; }
 .edge-in { display: flex; align-items: center; justify-content: space-between; height: 50px; }
 .edge-logo { display: grid; place-items: center; width: 44px; height: 44px; margin-left: -4px; }
 .edge-logo img { width: 32px; height: auto; }
+.edge-logo--duo { width: auto; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.edge-logo--duo .edge-x { font-size: 18px; font-weight: 500; color: var(--ink-2); line-height: 1; }
+.edge-logo--duo img.edge-partner { width: auto; height: 24px; }
 .tabs { display: flex; }
 .tab { display: flex; align-items: center; gap: 8px; text-decoration: none; font-weight: 650; font-size: 15px; letter-spacing: -0.005em; color: var(--ink-2); }
 .tab .ico { width: 20px; height: 20px; }
@@ -201,6 +204,8 @@ button { font: inherit; color: inherit; }
   .edge-in { height: 72px; align-items: flex-end; }
   .edge-logo { align-self: center; width: 48px; height: 48px; }
   .edge-logo img { width: 40px; }
+  .edge-logo--duo { width: auto; gap: 14px; }
+  .edge-logo--duo img.edge-partner { height: 30px; }
   .tabs { gap: 6px; margin-bottom: calc(-1 * var(--line)); }
   .tab {
     height: 50px; padding: 0 22px;

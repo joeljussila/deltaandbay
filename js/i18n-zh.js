@@ -6,6 +6,7 @@ window.DB_ZH = {
 "10 intensive days in Shenzhen for hardware and robotics founders. Build next to the people who make the parts. 11 to 20 January 2027.": "深圳 Build Sprint（硬件冲刺营）：专为硬件和机器人创始人准备的 10 天高强度冲刺，在做零部件的厂商身边把产品做出来。2027年1月11日至20日。",
 "Skip to content": "跳到正文",
 "Delta & Bay Founders Club, home": "Delta & Bay Founders Club 首页",
+"Delta & Bay Founders Club with Junfan Labs, home": "Delta & Bay Founders Club × Junfan Labs 首页",
 "Main": "主导航",
 "Build Sprint": "Build Sprint",
 "Consultancy": "咨询服务",
