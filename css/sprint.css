@@ -186,7 +186,9 @@
 .dcard dd { font-size: 13px; font-weight: 500; color: var(--ink-2); line-height: 1.38; text-wrap: pretty; }
 .dcard .opt, .dpop .opt { display: inline-block; font-size: 10px; font-weight: 750; letter-spacing: 0.02em; color: var(--ink-2); border: 1.5px solid var(--ink-3); padding: 0 6px; margin-right: 2px; line-height: 1.5; vertical-align: 1px; }
 .dcard .opt--fixed, .dpop .opt--fixed { color: var(--box); background: var(--new); border-color: var(--new); }
-.dcard--rest { background: var(--page); }
+.dcard--build { background: var(--page); }
+.dcard-kw, .dpop-kw { font-size: 11.5px; font-weight: 600; color: var(--ink-3); line-height: 1.35; text-wrap: pretty; }
+.dpop-kw { margin: 2px 0 8px; }
 .dcard--fixed h3 { color: var(--new); }
 .dcard-more {
   margin-top: auto; align-self: stretch; display: flex; align-items: center; gap: 8px;
@@ -238,7 +240,7 @@
 }
 @media (min-width: 640px) and (hover: hover) {
   .dcard:hover { background: #eef2fd; z-index: 2; }
-  .dcard--rest:hover { background: #d3ddf7; }
+  .dcard--build:hover { background: #d3ddf7; }
   .dcard:hover .dpop {
     opacity: 1; visibility: visible; transform: none;
     transition: opacity 160ms ease 120ms, transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1) 120ms, visibility 0s linear 120ms;
