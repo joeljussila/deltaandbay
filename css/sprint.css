@@ -98,6 +98,9 @@
 .team img { width: 96px; height: 96px; object-fit: cover; border: var(--line) solid var(--ink); display: block; filter: grayscale(1); }
 .team h3 { font-size: 19px; }
 .team p { color: var(--ink-2); font-weight: 500; margin-top: 4px; max-width: 34ch; }
+.team .bio { margin-top: 10px; display: grid; gap: 4px; }
+.team .bio li { display: block; grid-template-columns: none; font-size: 15px; line-height: 1.4; color: var(--ink-2); padding-left: 14px; position: relative; }
+.team .bio li::before { content: ''; position: absolute; left: 0; top: .6em; width: 5px; height: 5px; background: var(--ink); }
 .team-note { margin-top: 28px; font-weight: 600; }
 @media (min-width: 960px) {
   .team { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; max-width: 900px; }
@@ -179,7 +182,7 @@
 .dcard { position: relative; padding: 15px 14px 12px; display: flex; flex-direction: column; gap: 6px; border-top: var(--line) solid var(--ink); cursor: pointer; transition: background-color 160ms ease; }
 .dcard:first-child { border-top: 0; }
 .dcard-date { font-size: 12px; font-weight: 750; color: var(--ink-2); font-variant-numeric: tabular-nums; }
-.dcard h3 { font-size: 16.5px; letter-spacing: -0.012em; line-height: 1.2; text-wrap: balance; }
+.dcard h3 { margin-bottom: 8px; font-size: 16.5px; letter-spacing: -0.012em; line-height: 1.2; text-wrap: balance; }
 .dcard dl { display: grid; gap: 5px; margin-top: 4px; }
 .dcard dl > div { display: grid; grid-template-columns: 74px minmax(0, 1fr); gap: 8px; }
 .dcard dt { font-size: 11.5px; font-weight: 700; color: var(--ink-3); padding-top: 2px; font-variant-numeric: tabular-nums; }
@@ -241,10 +244,6 @@
 @media (min-width: 640px) and (hover: hover) {
   .dcard:hover { background: #eef2fd; z-index: 2; }
   .dcard--build:hover { background: #d3ddf7; }
-  .dcard:hover .dpop {
-    opacity: 1; visibility: visible; transform: none;
-    transition: opacity 160ms ease 120ms, transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1) 120ms, visibility 0s linear 120ms;
-  }
 }
 @media (min-width: 1100px) {
   .dgrid { grid-template-columns: repeat(5, minmax(0, 1fr)); }

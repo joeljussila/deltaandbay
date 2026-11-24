@@ -737,5 +737,15 @@ window.DB_ZH = {
 "08:30 to 21:00 at SCI: 6 hours of build and supplier time, 2 talks, open lab and show and tell. Everything is optional.": "08:30 至 21:00 在 SCI：6 小时开发与供应商时间，2 场讲座，开放实验室和成果分享；均可自选。",
 "Supplier office hours at SCI, to be confirmed by 4 Jan.": "SCI 供应商答疑时段，1 月 4 日前确认。",
 "Breakfast at SCI with the other teams.": "在 SCI 与其他团队共进早餐。",
-"Every day is packed, from breakfast to late: factory visits, supplier meetings, talks and an open lab. Everything is optional except four fixed things: the welcome dinner, the supplier meetings, demo day and the goodbye dinner. Reach out to suppliers as much as you can: we help with introductions, translation and parts. 16 to 18 January are build days, each with a technical theme, a session still to be confirmed and two talks.": "每天都排得满满的，从早餐到深夜：工厂参访、供应商会面、讲座和开放实验室。除四个固定项目外，其余全部可自选：欢迎晚宴、供应商会面、Demo Day 和告别晚宴。尽量多联系供应商：我们协助介绍、翻译和采购零件。1月16日至18日是开发日，每天有技术主题、一个待定环节和两场讲座。"
+"Every day is packed, from breakfast to late: factory visits, supplier meetings, talks and an open lab. Everything is optional except four fixed things: the welcome dinner, the supplier meetings, demo day and the goodbye dinner. Reach out to suppliers as much as you can: we help with introductions, translation and parts. 16 to 18 January are build days, each with a technical theme, a session still to be confirmed and two talks.": "每天都排得满满的，从早餐到深夜：工厂参访、供应商会面、讲座和开放实验室。除四个固定项目外，其余全部可自选：欢迎晚宴、供应商会面、Demo Day 和告别晚宴。尽量多联系供应商：我们协助介绍、翻译和采购零件。1月16日至18日是开发日，每天有技术主题、一个待定环节和两场讲座。",
+"Founder. Based in Shenzhen and San Francisco.": "创始人，常驻深圳和旧金山。",
+"Physical Sciences, University of Cambridge": "剑桥大学物理科学专业",
+"COO, Phera AI": "Phera AI 首席运营官",
+"Business development, RoboMercato": "RoboMercato 商务拓展",
+"Executive Assistant, Cheung Kei Group": "Cheung Kei Group 总行政助理",
+"BSc Politics and International Relations, UCL": "UCL 政治与国际关系学士",
+"Fellow, Cambridge Chinese Entrepreneurship Organisation": "剑桥中国创业者组织 Fellow",
+"Click a day for the full plan.": "点击某一天，查看全天安排。",
+"Frequently sourced components for teams in San Francisco": "经常为旧金山的团队采购零部件",
+"President, Trinity College Entrepreneurship Club": "剑桥三一学院创业俱乐部主席"
 };

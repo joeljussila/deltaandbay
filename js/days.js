@@ -1,6 +1,6 @@
 /* The 10 days: each card opens its full day.
-   Mouse: hover shows it (CSS). Tap or click: pins it open (.is-open).
-   Click outside or Escape closes it. Without JS, hover and keyboard focus still work. */
+   Click or tap opens it (.is-open). Click outside or Escape closes it.
+   Without JS, keyboard focus still opens it. */
 (function () {
   'use strict';
   var cards = Array.prototype.slice.call(document.querySelectorAll('[data-day]'));
@@ -18,7 +18,6 @@
       closeAll(card);
       set(card, open);
     });
-    card.addEventListener('mouseenter', function () { closeAll(card); });
   });
   document.addEventListener('click', function (e) { if (!e.target.closest('[data-day]')) closeAll(null); });
   document.addEventListener('keydown', function (e) {
