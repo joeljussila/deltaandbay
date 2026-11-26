@@ -611,7 +611,7 @@ window.DB_ZH = {
 "per person, with accommodation": "每人，含住宿",
 "US$1,600 without accommodation": "不含住宿 US$1,600",
 "Early bird, sold out": "早鸟价，已售完",
-"The early bird price is sold out. It still applies if you booked a call or chatted with us before 23 November.": "早鸟价已售完。如果你在 11月23日前约过电话或和我们聊过，仍然按早鸟价。",
+"The early bird price is sold out.": "早鸟价已售完。",
 "Times and visits on the day plan may move a little; the dates, the price you book at and what’s included won’t. If we ever change those, everything you’ve paid comes back.": "每日安排里的时间和参访可能会小幅调整，但日期、你报名时的价格和包含内容不会变。万一这些有变动，你付的钱全额退还。",
 "Accommodation for 9 nights, 11 to 20 January (in the US$1,900 price)": "9 晚住宿，1月11日至20日（含在 US$1,900 里）",
 "Pay the balance by Tue 22 Dec": "12月22日（周二）前付清尾款",
